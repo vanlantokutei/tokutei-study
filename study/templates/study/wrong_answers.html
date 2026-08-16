@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Câu sai - {{ exam.title }}</title>
+
+<style>
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background: #f4f7fb;
+    color: #172033;
+}
+
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+.card {
+    background: white;
+    padding: 26px;
+    margin: 20px 0;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0,0,0,.07);
+}
+
+.question {
+    font-size: 21px;
+    font-weight: bold;
+    line-height: 2.1;
+    margin: 20px 0;
+}
+
+.option {
+    padding: 13px;
+    margin: 9px 0;
+    border-radius: 9px;
+    border: 2px solid #e5e7eb;
+    line-height: 1.8;
+}
+
+.correct {
+    background: #dcfce7;
+    border-color: #22c55e;
+}
+
+.wrong {
+    background: #fee2e2;
+    border-color: #ef4444;
+}
+
+.translation {
+    margin-top: 18px;
+    padding: 18px;
+    background: #eff6ff;
+    border-radius: 10px;
+    line-height: 1.8;
+}
+
+.explanation {
+    margin-top: 15px;
+    padding: 18px;
+    background: #f1f5f9;
+    border-radius: 10px;
+    line-height: 1.8;
+}
+
+ruby {
+    ruby-position: over;
+}
+
+rt {
+    font-size: .52em;
+    font-weight: normal;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>❌ Câu làm sai</h1>
+<h2>{{ exam.title }}</h2>
+
+{% for item in wrong_items %}
+
+<div class="card">
+
+<h3>Câu {{ item.order }}</h3>
+
+<div class="question">
+    {{ item.question.question_ruby|safe }}
+</div>
+
+<div class="option
+{% if item.correct == 'A' %}correct{% endif %}
+{% if item.selected == 'A' and item.selected != item.correct %}wrong{% endif %}">
+    A. {{ item.question.option_a_ruby|safe }}
+</div>
+
+<div class="option
+{% if item.correct == 'B' %}correct{% endif %}
+{% if item.selected == 'B' and item.selected != item.correct %}wrong{% endif %}">
+    B. {{ item.question.option_b_ruby|safe }}
+</div>
+
+<div class="option
+{% if item.correct == 'C' %}correct{% endif %}
+{% if item.selected == 'C' and item.selected != item.correct %}wrong{% endif %}">
+    C. {{ item.question.option_c_ruby|safe }}
+</div>
+
+<p><strong>Bạn chọn:</strong> {{ item.selected }}</p>
+<p><strong>Đáp án đúng:</strong> {{ item.correct }}</p>
+
+<div class="translation">
+    🇻🇳 <strong>Dịch câu hỏi:</strong><br><br>
+
+    {% if item.question.question_vi %}
+        {{ item.question.question_vi|linebreaksbr }}
+    {% else %}
+        Chưa có bản dịch tiếng Việt.
+    {% endif %}
+</div>
+
+<div class="explanation">
+    🇯🇵 <strong>Giải thích tiếng Nhật:</strong><br><br>
+
+    {% if item.question.explanation %}
+        {{ item.question.explanation|linebreaksbr }}
+    {% else %}
+        Chưa có giải thích tiếng Nhật.
+    {% endif %}
+
+    <br><br>
+
+    🇻🇳 <strong>Giải thích tiếng Việt:</strong><br><br>
+
+    {% if item.question.explanation_vi %}
+        {{ item.question.explanation_vi|linebreaksbr }}
+    {% else %}
+        Chưa có giải thích tiếng Việt.
+    {% endif %}
+</div>
+
+</div>
+
+{% empty %}
+
+<div class="card">
+    🎉 Không có câu sai.
+</div>
+
+{% endfor %}
+
+</div>
+
+</body>
+</html>

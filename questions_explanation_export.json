@@ -1,0 +1,1450 @@
+[
+  {
+    "id": 1,
+    "question_jp": "食中毒を予防するために最も重要なことは何ですか？",
+    "question_vi": "Nghĩa là: Điều quan trọng nhất để phòng ngừa ngộ độc thực phẩm là gì?",
+    "correct_answer": "A",
+    "explanation_jp": "手洗いは食中毒予防の基本です。調理前、トイレの後、生の肉や魚を触った後などは、石けんを使って十分に手を洗うことが重要です。\r\n\r\nRửa tay là một trong những nguyên tắc cơ bản để phòng ngừa ngộ độc thực phẩm. Cần rửa tay kỹ bằng xà phòng trước khi chế biến, sau khi đi vệ sinh và sau khi chạm vào thịt hoặc cá sống.",
+    "explanation_vi": ""
+  },
+  {
+    "id": 2,
+    "question_jp": "調理を始める前に、最も適切な行動はどれですか？",
+    "question_vi": "Trước khi bắt đầu chế biến, hành động nào phù hợp nhất?",
+    "correct_answer": "A",
+    "explanation_jp": "調理前には正しい手洗いが重要です。\nTrước khi chế biến, rửa tay đúng cách là rất quan trọng.",
+    "explanation_vi": ""
+  },
+  {
+    "id": 3,
+    "question_jp": "冷蔵庫で食品を保存するとき、重要なことはどれですか？",
+    "question_vi": "Khi bảo quản thực phẩm trong tủ lạnh, điều nào quan trọng?",
+    "correct_answer": "B",
+    "explanation_jp": "食品は適切な温度で保存します。\nThực phẩm cần được bảo quản ở nhiệt độ phù hợp.",
+    "explanation_vi": ""
+  },
+  {
+    "id": 4,
+    "question_jp": "生肉を切った包丁を使った後、どうしますか？",
+    "question_vi": "Sau khi dùng dao cắt thịt sống, nên làm gì?",
+    "correct_answer": "C",
+    "explanation_jp": "交差汚染を防ぐため、器具を洗浄・消毒します。\nCần rửa và khử trùng dụng cụ để phòng nhiễm chéo.",
+    "explanation_vi": ""
+  },
+  {
+    "id": 5,
+    "question_jp": "体調が悪く、下痢の症状がある場合、どうするべきですか？",
+    "question_vi": "Nếu bị tiêu chảy và sức khỏe không tốt, nên làm gì?",
+    "correct_answer": "B",
+    "explanation_jp": "体調不良は責任者へ報告する必要があります。\nKhi sức khỏe bất thường cần báo cho người phụ trách.",
+    "explanation_vi": ""
+  },
+  {
+    "id": 6,
+    "question_jp": "床に落ちた食品はどうしますか？",
+    "question_vi": "Thực phẩm rơi xuống sàn nên xử lý thế nào?",
+    "correct_answer": "C",
+    "explanation_jp": "汚染された可能性がある食品は提供しません。\nKhông phục vụ thực phẩm có khả năng đã bị nhiễm bẩn.",
+    "explanation_vi": ""
+  },
+  {
+    "id": 7,
+    "question_jp": "加熱調理で重要なことはどれですか？",
+    "question_vi": "Điều nào quan trọng khi gia nhiệt thực phẩm?",
+    "correct_answer": "A",
+    "explanation_jp": "食品は中心部まで十分に加熱することが重要です。\nThực phẩm cần được gia nhiệt đầy đủ tới phần bên trong.",
+    "explanation_vi": ""
+  },
+  {
+    "id": 8,
+    "question_jp": "調理前に食材について確認することとして適切なのはどれですか？",
+    "question_vi": "Trước khi chế biến, việc kiểm tra nguyên liệu nào là phù hợp?",
+    "correct_answer": "B",
+    "explanation_jp": "食材の品質や期限を確認してから使用します。\nCần kiểm tra chất lượng và hạn sử dụng trước khi dùng nguyên liệu.",
+    "explanation_vi": ""
+  },
+  {
+    "id": 9,
+    "question_jp": "料理の盛り付けで大切なことはどれですか？",
+    "question_vi": "Điều quan trọng khi trình bày món ăn là gì?",
+    "correct_answer": "A",
+    "explanation_jp": "盛り付け時も衛生管理が必要です。\nKhi trình bày món ăn vẫn phải đảm bảo vệ sinh.",
+    "explanation_vi": ""
+  },
+  {
+    "id": 10,
+    "question_jp": "冷凍食品を解凍するとき、適切な方法はどれですか？",
+    "question_vi": "Khi rã đông thực phẩm đông lạnh, phương pháp nào phù hợp?",
+    "correct_answer": "A",
+    "explanation_jp": "解凍中も微生物の増殖に注意します。\nTrong quá trình rã đông cần chú ý hạn chế vi sinh vật phát triển.",
+    "explanation_vi": ""
+  },
+  {
+    "id": 11,
+    "question_jp": "調理器具を使用する前に確認することはどれですか？",
+    "question_vi": "Trước khi sử dụng dụng cụ chế biến cần kiểm tra gì?",
+    "correct_answer": "A",
+    "explanation_jp": "清潔な調理器具を使用します。\nPhải sử dụng dụng cụ chế biến sạch sẽ.",
+    "explanation_vi": ""
+  },
+  {
+    "id": 12,
+    "question_jp": "お客様が来店したときの対応として適切なのはどれですか？",
+    "question_vi": "Cách ứng xử phù hợp khi khách vào cửa hàng là gì?",
+    "correct_answer": "B",
+    "explanation_jp": "お客様には明るく丁寧に挨拶します。\nCần chào khách vui vẻ và lịch sự.",
+    "explanation_vi": ""
+  },
+  {
+    "id": 13,
+    "question_jp": "注文を受けるときに重要なことはどれですか？",
+    "question_vi": "Điều quan trọng khi nhận order là gì?",
+    "correct_answer": "A",
+    "explanation_jp": "注文内容を正確に確認することが大切です。\nCần xác nhận chính xác nội dung khách gọi.",
+    "explanation_vi": ""
+  },
+  {
+    "id": 14,
+    "question_jp": "お客様から苦情を受けた場合、まずどうしますか？",
+    "question_vi": "Khi nhận khiếu nại từ khách, trước tiên nên làm gì?",
+    "correct_answer": "C",
+    "explanation_jp": "まずお客様の話を丁寧に聞き、状況を確認します。\nTrước tiên cần lắng nghe khách cẩn thận và xác nhận tình hình.",
+    "explanation_vi": ""
+  },
+  {
+    "id": 15,
+    "question_jp": "料理を提供するときに確認することはどれですか？",
+    "question_vi": "Khi phục vụ món ăn cần kiểm tra điều gì?",
+    "correct_answer": "A",
+    "explanation_jp": "注文内容と提供する料理が一致しているか確認します。\nCần xác nhận món phục vụ đúng với món khách đã gọi.",
+    "explanation_vi": ""
+  },
+  {
+    "id": 16,
+    "question_jp": "会計時の対応として適切なのはどれですか？",
+    "question_vi": "Cách xử lý phù hợp khi thanh toán là gì?",
+    "correct_answer": "A",
+    "explanation_jp": "会計では金額を正確に確認します。\nKhi thanh toán cần xác nhận chính xác số tiền.",
+    "explanation_vi": ""
+  },
+  {
+    "id": 17,
+    "question_jp": "冷蔵庫内で生肉を保存する場合、最も適切な場所はどこですか？",
+    "question_vi": "Khi bảo quản thịt sống trong tủ lạnh, vị trí nào phù hợp nhất?",
+    "correct_answer": "C",
+    "explanation_jp": "生肉から出る汁による交差汚染を防ぐ必要があります。\nCần phòng ngừa nhiễm chéo do nước từ thịt sống chảy sang thực phẩm khác.",
+    "explanation_vi": ""
+  },
+  {
+    "id": 18,
+    "question_jp": "調理中に手袋が破れたことに気づきました。最も適切な対応はどれですか？",
+    "question_vi": "Trong lúc chế biến phát hiện găng tay bị rách. Xử lý nào phù hợp nhất?",
+    "correct_answer": "C",
+    "explanation_jp": "破損した手袋は使用せず、衛生的な状態にして新しいものへ交換します。\nKhông tiếp tục sử dụng găng tay bị rách; cần vệ sinh tay và thay găng mới.",
+    "explanation_vi": ""
+  },
+  {
+    "id": 19,
+    "question_jp": "まな板を肉用と野菜用に分ける主な目的は何ですか？",
+    "question_vi": "Mục đích chính của việc tách thớt dùng cho thịt và rau là gì?",
+    "correct_answer": "B",
+    "explanation_jp": "用途別に器具を分けることは交差汚染防止に有効です。\nPhân chia dụng cụ theo mục đích sử dụng giúp phòng ngừa nhiễm chéo.",
+    "explanation_vi": ""
+  },
+  {
+    "id": 20,
+    "question_jp": "食品の消費期限が過ぎていることに気づいた場合、どうしますか？",
+    "question_vi": "Nếu phát hiện thực phẩm đã quá hạn sử dụng, nên làm gì?",
+    "correct_answer": "C",
+    "explanation_jp": "期限管理は食品衛生の基本です。期限切れ食品を自己判断で使用してはいけません。\nQuản lý hạn sử dụng là nguyên tắc cơ bản của vệ sinh thực phẩm.",
+    "explanation_vi": ""
+  },
+  {
+    "id": 21,
+    "question_jp": "嘔吐物を処理するとき、特に重要なことはどれですか？",
+    "question_vi": "Khi xử lý chất nôn, điều nào đặc biệt quan trọng?",
+    "correct_answer": "B",
+    "explanation_jp": "感染拡大を防ぐため、適切な防護と消毒方法が必要です。\nCần sử dụng biện pháp bảo hộ và khử trùng thích hợp để tránh lây nhiễm.",
+    "explanation_vi": ""
+  },
+  {
+    "id": 22,
+    "question_jp": "加熱した料理を提供する前に確認すべきこととして最も適切なのはどれですか？",
+    "question_vi": "Trước khi phục vụ món đã nấu, điều nào cần kiểm tra phù hợp nhất?",
+    "correct_answer": "A",
+    "explanation_jp": "安全な提供のため、必要な加熱が行われていることを確認します。\nĐể phục vụ an toàn cần xác nhận thực phẩm đã được gia nhiệt đầy đủ.",
+    "explanation_vi": ""
+  },
+  {
+    "id": 23,
+    "question_jp": "複数の注文を同時に調理するとき、重要なことはどれですか？",
+    "question_vi": "Khi chế biến nhiều order cùng lúc, điều nào quan trọng?",
+    "correct_answer": "A",
+    "explanation_jp": "注文内容を正確に把握し、適切な順序で調理することが重要です。\nCần nắm chính xác order và chế biến theo thứ tự phù hợp.",
+    "explanation_vi": ""
+  },
+  {
+    "id": 24,
+    "question_jp": "食材を計量する主な理由として適切なのはどれですか？",
+    "question_vi": "Lý do chính phù hợp của việc cân đong nguyên liệu là gì?",
+    "correct_answer": "A",
+    "explanation_jp": "適切な計量は味や品質の安定、原価管理にもつながります。\nCân đong đúng giúp ổn định hương vị, chất lượng và hỗ trợ quản lý chi phí.",
+    "explanation_vi": ""
+  },
+  {
+    "id": 25,
+    "question_jp": "料理に異物が入っていることを発見した場合、最も適切な対応はどれですか？",
+    "question_vi": "Nếu phát hiện dị vật trong món ăn, xử lý nào phù hợp nhất?",
+    "correct_answer": "C",
+    "explanation_jp": "異物混入時は提供を止め、原因確認など店の手順に従って対応します。\nKhi có dị vật cần ngừng phục vụ và xử lý theo quy trình của cửa hàng.",
+    "explanation_vi": ""
+  },
+  {
+    "id": 26,
+    "question_jp": "調理済み食品を扱う際に注意することはどれですか？",
+    "question_vi": "Khi xử lý thực phẩm đã chế biến, cần chú ý điều gì?",
+    "correct_answer": "A",
+    "explanation_jp": "調理済み食品への二次汚染を防ぐことが重要です。\nĐiều quan trọng là phòng ngừa nhiễm bẩn thứ cấp vào thực phẩm đã chế biến.",
+    "explanation_vi": ""
+  },
+  {
+    "id": 27,
+    "question_jp": "お客様からアレルギーについて質問されたが、自分では分からない場合、どうしますか？",
+    "question_vi": "Khách hỏi về dị ứng thực phẩm nhưng bạn không biết rõ. Nên làm gì?",
+    "correct_answer": "C",
+    "explanation_jp": "アレルギー対応では推測せず、正確な情報を確認することが重要です。\nĐối với dị ứng thực phẩm, không được đoán mà phải xác nhận thông tin chính xác.",
+    "explanation_vi": ""
+  },
+  {
+    "id": 28,
+    "question_jp": "注文と違う料理を提供してしまった場合、適切な対応はどれですか？",
+    "question_vi": "Nếu đã phục vụ nhầm món so với order, cách xử lý phù hợp là gì?",
+    "correct_answer": "B",
+    "explanation_jp": "提供ミスがあった場合は状況を確認し、丁寧に対応します。\nKhi phục vụ nhầm món cần xác nhận tình hình và xử lý lịch sự.",
+    "explanation_vi": ""
+  },
+  {
+    "id": 29,
+    "question_jp": "高齢のお客様への対応として適切なのはどれですか？",
+    "question_vi": "Cách phục vụ phù hợp đối với khách cao tuổi là gì?",
+    "correct_answer": "A",
+    "explanation_jp": "お客様の状況に合わせた丁寧な接客が大切です。\nCần phục vụ lịch sự phù hợp với tình trạng và nhu cầu của từng khách.",
+    "explanation_vi": ""
+  },
+  {
+    "id": 30,
+    "question_jp": "店内でお客様が転倒した場合、まず行うべきこととして適切なのはどれですか？",
+    "question_vi": "Nếu khách bị ngã trong cửa hàng, việc phù hợp cần làm trước tiên là gì?",
+    "correct_answer": "B",
+    "explanation_jp": "まずお客様の安全を確認し、状況に応じて責任者への報告など必要な対応を行います。\nTrước hết cần kiểm tra an toàn của khách và thực hiện hỗ trợ, báo cáo cần thiết.",
+    "explanation_vi": ""
+  },
+  {
+    "id": 31,
+    "question_jp": "閉店前の確認として重要なことはどれですか？",
+    "question_vi": "Điều nào quan trọng khi kiểm tra trước khi đóng cửa?",
+    "correct_answer": "A",
+    "explanation_jp": "閉店時は店舗のルールに従い、衛生や安全に関する確認を行います。\nKhi đóng cửa cần kiểm tra các hạng mục vệ sinh và an toàn theo quy định.",
+    "explanation_vi": ""
+  },
+  {
+    "id": 32,
+    "question_jp": "作業開始前に従業員の健康状態を確認しました。下痢の症状がある従業員がいた場合、最も適切な対応はどれですか？",
+    "question_vi": "Trước khi bắt đầu làm việc, phát hiện một nhân viên bị tiêu chảy. Xử lý nào phù hợp nhất?",
+    "correct_answer": "B",
+    "explanation_jp": "体調不良者による食品汚染を防ぐため、責任者へ報告し適切に対応します。\nĐể phòng thực phẩm bị nhiễm bẩn từ người đang có triệu chứng bệnh, cần báo người phụ trách và xử lý phù hợp.",
+    "explanation_vi": ""
+  },
+  {
+    "id": 33,
+    "question_jp": "生肉を切ったまな板で、そのままサラダ用の野菜を切ろうとしています。どうしますか？",
+    "question_vi": "Một chiếc thớt vừa dùng cắt thịt sống đang được chuẩn bị dùng tiếp để cắt rau salad. Nên làm gì?",
+    "correct_answer": "C",
+    "explanation_jp": "生肉から野菜への交差汚染を防ぐ必要があります。\nCần phòng ngừa nhiễm chéo từ thịt sống sang rau.",
+    "explanation_vi": ""
+  },
+  {
+    "id": 34,
+    "question_jp": "冷蔵庫の温度が店で定められた基準より高くなっていました。最初に行う対応として適切なのはどれですか？",
+    "question_vi": "Nhiệt độ tủ lạnh cao hơn tiêu chuẩn cửa hàng quy định. Xử lý ban đầu nào phù hợp?",
+    "correct_answer": "C",
+    "explanation_jp": "異常値を確認した場合は放置せず、報告・確認・必要な対応を行います。\nKhi phát hiện nhiệt độ bất thường, không được bỏ qua mà cần báo cáo, kiểm tra và xử lý.",
+    "explanation_vi": ""
+  },
+  {
+    "id": 35,
+    "question_jp": "床に嘔吐物があります。処理する従業員が最初に注意すべきことはどれですか？",
+    "question_vi": "Có chất nôn trên sàn. Nhân viên xử lý trước tiên cần chú ý điều gì?",
+    "correct_answer": "A",
+    "explanation_jp": "感染拡大を防ぐため、適切な防護具と処理方法が必要です。\nĐể tránh lây nhiễm, cần sử dụng đồ bảo hộ và phương pháp xử lý phù hợp.",
+    "explanation_vi": ""
+  },
+  {
+    "id": 36,
+    "question_jp": "手洗い後に清潔でないタオルで手を拭きました。この行動の問題点は何ですか？",
+    "question_vi": "Sau khi rửa tay lại lau bằng khăn không sạch. Vấn đề của hành động này là gì?",
+    "correct_answer": "B",
+    "explanation_jp": "手洗い後も再汚染を防ぐことが重要です。\nSau khi rửa tay vẫn phải tránh để tay bị nhiễm bẩn trở lại.",
+    "explanation_vi": ""
+  },
+  {
+    "id": 37,
+    "question_jp": "10人分の料理に1人分150gの食材が必要です。必要な食材は合計何gですか？",
+    "question_vi": "Một phần ăn cần 150g nguyên liệu. Làm 10 phần cần tổng cộng bao nhiêu gram?",
+    "correct_answer": "D",
+    "explanation_jp": "150g × 10人分 = 1,500gです。\n150g × 10 phần = 1.500g.",
+    "explanation_vi": ""
+  },
+  {
+    "id": 38,
+    "question_jp": "4人分で800gの食材を使用します。同じ分量で10人分作る場合、何g必要ですか？",
+    "question_vi": "4 phần sử dụng 800g nguyên liệu. Nếu làm 10 phần với cùng định lượng thì cần bao nhiêu?",
+    "correct_answer": "C",
+    "explanation_jp": "800g ÷ 4 = 200g/人、200g × 10 = 2,000gです。\n800g ÷ 4 = 200g/phần; 200g × 10 = 2.000g.",
+    "explanation_vi": ""
+  },
+  {
+    "id": 39,
+    "question_jp": "注文が20食あり、すでに8食を提供しました。残りは何食ですか？",
+    "question_vi": "Có order 20 phần và đã phục vụ 8 phần. Còn lại bao nhiêu phần?",
+    "correct_answer": "C",
+    "explanation_jp": "20 - 8 = 12食です。\n20 - 8 = 12 phần.",
+    "explanation_vi": ""
+  },
+  {
+    "id": 40,
+    "question_jp": "1皿に30mlのソースを使用します。15皿では何ml必要ですか？",
+    "question_vi": "Mỗi đĩa dùng 30ml nước sốt. 15 đĩa cần bao nhiêu ml?",
+    "correct_answer": "C",
+    "explanation_jp": "30ml × 15 = 450mlです。\n30ml × 15 = 450ml.",
+    "explanation_vi": ""
+  },
+  {
+    "id": 41,
+    "question_jp": "調理中、料理の中心部が十分に加熱されていない可能性があります。どうしますか？",
+    "question_vi": "Trong lúc chế biến, có khả năng phần bên trong món ăn chưa được gia nhiệt đầy đủ. Nên làm gì?",
+    "correct_answer": "B",
+    "explanation_jp": "安全性を確保するため、必要な加熱ができていることを確認します。\nCần xác nhận thực phẩm đã được gia nhiệt đầy đủ để đảm bảo an toàn.",
+    "explanation_vi": ""
+  },
+  {
+    "id": 42,
+    "question_jp": "お客様が「卵アレルギーがあります。この料理は食べられますか」と質問しました。自分では原材料を確認できません。どうしますか？",
+    "question_vi": "Khách nói bị dị ứng trứng và hỏi món này có ăn được không. Bạn không tự xác nhận được nguyên liệu. Nên làm gì?",
+    "correct_answer": "C",
+    "explanation_jp": "アレルギー対応では推測せず、正確な情報を確認します。\nVới dị ứng thực phẩm, không được đoán mà phải xác nhận thông tin chính xác.",
+    "explanation_vi": ""
+  },
+  {
+    "id": 43,
+    "question_jp": "会計は2,750円です。お客様から5,000円を受け取りました。お釣りはいくらですか？",
+    "question_vi": "Hóa đơn là 2.750 yên. Khách đưa 5.000 yên. Tiền thừa là bao nhiêu?",
+    "correct_answer": "B",
+    "explanation_jp": "5,000円 - 2,750円 = 2,250円です。\n5.000 - 2.750 = 2.250 yên.",
+    "explanation_vi": ""
+  },
+  {
+    "id": 44,
+    "question_jp": "お客様が注文した料理が長時間届かないと申し出ました。適切な対応はどれですか？",
+    "question_vi": "Khách báo món đã gọi rất lâu nhưng chưa được mang ra. Cách xử lý nào phù hợp?",
+    "correct_answer": "A",
+    "explanation_jp": "状況を確認し、お客様へ丁寧に説明・対応します。\nCần kiểm tra tình hình và giải thích, xử lý lịch sự với khách.",
+    "explanation_vi": ""
+  },
+  {
+    "id": 45,
+    "question_jp": "店内の通路に水がこぼれており、お客様が通ろうとしています。まずどうしますか？",
+    "question_vi": "Nước bị đổ trên lối đi và khách đang chuẩn bị đi qua. Trước tiên nên làm gì?",
+    "correct_answer": "B",
+    "explanation_jp": "転倒事故を防ぐため、危険箇所を放置せず安全を確保します。\nĐể phòng tai nạn té ngã, không được bỏ mặc vị trí nguy hiểm.",
+    "explanation_vi": ""
+  },
+  {
+    "id": 46,
+    "question_jp": "3人のお客様がそれぞれ1,200円、850円、950円の商品を注文しました。合計はいくらですか？",
+    "question_vi": "Ba khách gọi các món lần lượt 1.200 yên, 850 yên và 950 yên. Tổng cộng là bao nhiêu?",
+    "correct_answer": "C",
+    "explanation_jp": "1,200 + 850 + 950 = 3,000円です。\n1.200 + 850 + 950 = 3.000 yên.",
+    "explanation_vi": ""
+  },
+  {
+    "id": 47,
+    "question_jp": "食品を取り扱う前の手洗いとして、最も適切なものはどれですか。",
+    "question_vi": "Trước khi xử lý thực phẩm, cách rửa tay nào phù hợp nhất?",
+    "correct_answer": "B",
+    "explanation_jp": "食品を取り扱う前は、決められた方法で手洗いを行い、手から食品への汚染を防ぎます。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 48,
+    "question_jp": "調理従事者に下痢や嘔吐の症状がある場合、最も適切な対応はどれですか。",
+    "question_vi": "Nếu nhân viên chế biến bị tiêu chảy hoặc nôn, xử lý nào phù hợp nhất?",
+    "correct_answer": "A",
+    "explanation_jp": "下痢や嘔吐などの症状がある場合は責任者へ報告し、食品を扱う作業について適切な対応を行います。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 49,
+    "question_jp": "生肉と加熱済み食品を冷蔵庫で保存するとき、交差汚染を防ぐために適切なのはどれですか。",
+    "question_vi": "Khi bảo quản thịt sống và thực phẩm đã nấu trong tủ lạnh, cách nào phù hợp để tránh nhiễm chéo?",
+    "correct_answer": "C",
+    "explanation_jp": "生肉の汁などによる二次汚染を防ぐため、食品を適切に区分して保存します。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 50,
+    "question_jp": "生肉を切ったまな板で、洗浄せずにサラダ用の野菜を切ると、どのような危険がありますか。",
+    "question_vi": "Nếu dùng thớt vừa cắt thịt sống để cắt rau salad mà không rửa, nguy cơ nào có thể xảy ra?",
+    "correct_answer": "A",
+    "explanation_jp": "生の食材からそのまま食べる食品へ微生物などが移る交差汚染の危険があります。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 51,
+    "question_jp": "冷蔵庫の温度が店で定められた基準を超えていることに気づきました。適切な対応はどれですか。",
+    "question_vi": "Bạn phát hiện nhiệt độ tủ lạnh vượt tiêu chuẩn của cửa hàng. Xử lý nào phù hợp?",
+    "correct_answer": "B",
+    "explanation_jp": "温度異常を放置せず、報告して原因や食品への影響を確認することが重要です。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 52,
+    "question_jp": "床に落ちた調理済み食品をお客様に提供してはいけない主な理由はどれですか。",
+    "question_vi": "Lý do chính không được phục vụ thực phẩm đã nấu bị rơi xuống sàn là gì?",
+    "correct_answer": "C",
+    "explanation_jp": "床にはさまざまな汚染源があるため、落下した食品は安全性を確保できません。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 53,
+    "question_jp": "食品の消費期限が過ぎていることを発見しました。適切なのはどれですか。",
+    "question_vi": "Phát hiện thực phẩm đã quá hạn sử dụng. Cách nào phù hợp?",
+    "correct_answer": "B",
+    "explanation_jp": "期限を過ぎた食品を自己判断で使用せず、店舗の管理ルールに従います。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 54,
+    "question_jp": "手洗い後に汚れたタオルで手を拭くことが不適切な理由はどれですか。",
+    "question_vi": "Tại sao lau tay bằng khăn bẩn sau khi rửa tay là không phù hợp?",
+    "correct_answer": "A",
+    "explanation_jp": "洗浄した手を汚れたものに触れさせると、再汚染につながります。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 55,
+    "question_jp": "嘔吐物を処理するときの対応として適切なのはどれですか。",
+    "question_vi": "Khi xử lý chất nôn, cách nào phù hợp?",
+    "correct_answer": "C",
+    "explanation_jp": "感染拡大を防止するため、防護具を使用し、店舗で定められた方法で適切に処理します。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 56,
+    "question_jp": "調理中に使い捨て手袋が破れました。適切な対応はどれですか。",
+    "question_vi": "Găng tay dùng một lần bị rách trong khi chế biến. Cách nào phù hợp?",
+    "correct_answer": "B",
+    "explanation_jp": "破損した手袋は衛生状態を維持できないため、適切に交換します。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 57,
+    "question_jp": "加熱調理を行うとき、食品の安全を確保するために重要なのはどれですか。",
+    "question_vi": "Khi gia nhiệt thực phẩm, điều nào quan trọng để đảm bảo an toàn?",
+    "correct_answer": "B",
+    "explanation_jp": "食品の安全確保には、中心部まで必要な加熱が行われていることを確認することが重要です。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 58,
+    "question_jp": "冷凍食品を解凍するとき、衛生管理上適切なのはどれですか。",
+    "question_vi": "Khi rã đông thực phẩm đông lạnh, cách nào phù hợp về vệ sinh?",
+    "correct_answer": "C",
+    "explanation_jp": "解凍中の微生物増殖や汚染を防ぐため、適切な方法で解凍します。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 59,
+    "question_jp": "料理を毎回同じ品質で提供するために、食材を計量する目的として適切なのはどれですか。",
+    "question_vi": "Mục đích phù hợp của việc cân nguyên liệu để món ăn có chất lượng ổn định là gì?",
+    "correct_answer": "A",
+    "explanation_jp": "レシピに基づいて適切に計量することで、味や量などの品質を安定させることができます。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 60,
+    "question_jp": "調理済み食品に異物が入っていることを発見しました。最も適切な対応はどれですか。",
+    "question_vi": "Phát hiện dị vật trong thực phẩm đã chế biến. Xử lý nào phù hợp nhất?",
+    "correct_answer": "B",
+    "explanation_jp": "異物混入を発見した場合は提供を止め、責任者へ報告して原因確認など必要な対応を行います。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 61,
+    "question_jp": "複数の注文を同時に調理するとき、提供ミスを防ぐために重要なのはどれですか。",
+    "question_vi": "Khi chế biến nhiều order cùng lúc, điều nào quan trọng để tránh phục vụ nhầm?",
+    "correct_answer": "A",
+    "explanation_jp": "注文内容や数量などを正確に確認し、間違いのないように調理・提供します。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 62,
+    "question_jp": "調理を始める前に食材について確認することとして適切なのはどれですか。",
+    "question_vi": "Trước khi chế biến, điều nào phù hợp cần kiểm tra ở nguyên liệu?",
+    "correct_answer": "A",
+    "explanation_jp": "食材の品質、期限、保存状態などを確認してから使用します。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 63,
+    "question_jp": "調理済み食品を取り扱うときに重要なのはどれですか。",
+    "question_vi": "Khi xử lý thực phẩm đã nấu chín, điều nào quan trọng?",
+    "correct_answer": "A",
+    "explanation_jp": "加熱後の食品が再び汚染されないよう、器具や取り扱い方法に注意します。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 64,
+    "question_jp": "盛り付けを行う際の衛生的な行動として適切なのはどれですか。",
+    "question_vi": "Hành động nào phù hợp về vệ sinh khi trình bày món ăn?",
+    "correct_answer": "B",
+    "explanation_jp": "盛り付け時も清潔な器具や食器を使用し、食品の汚染を防ぎます。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 65,
+    "question_jp": "料理の味や量を一定に保つために最も適切なのはどれですか。",
+    "question_vi": "Để duy trì hương vị và lượng món ăn ổn định, cách nào phù hợp nhất?",
+    "correct_answer": "B",
+    "explanation_jp": "レシピや標準量を守ることで、料理の品質を安定させます。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 66,
+    "question_jp": "使用前の調理器具について確認することとして適切なのはどれですか。",
+    "question_vi": "Trước khi dùng dụng cụ chế biến, điều nào phù hợp cần kiểm tra?",
+    "correct_answer": "A",
+    "explanation_jp": "器具が清潔で、破損などがなく安全に使用できる状態か確認します。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 67,
+    "question_jp": "お客様が来店したときの対応として適切なのはどれですか。",
+    "question_vi": "Khi khách vào cửa hàng, cách ứng xử nào phù hợp?",
+    "correct_answer": "B",
+    "explanation_jp": "来店されたお客様には、状況に応じて明るく丁寧に挨拶します。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 68,
+    "question_jp": "注文を受けるとき、間違いを防ぐために重要なのはどれですか。",
+    "question_vi": "Khi nhận order, điều nào quan trọng để tránh sai sót?",
+    "correct_answer": "A",
+    "explanation_jp": "商品、数量、必要な要望など注文内容を正確に確認します。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 69,
+    "question_jp": "お客様から苦情を受けた場合、最初の対応として適切なのはどれですか。",
+    "question_vi": "Khi nhận khiếu nại của khách, xử lý ban đầu nào phù hợp?",
+    "correct_answer": "C",
+    "explanation_jp": "まずお客様の話を丁寧に聞き、何が起きたのかを確認して適切に対応します。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 70,
+    "question_jp": "注文と違う料理を提供したことに気づきました。適切な対応はどれですか。",
+    "question_vi": "Phát hiện đã phục vụ món khác với order. Xử lý nào phù hợp?",
+    "correct_answer": "A",
+    "explanation_jp": "提供ミスを確認した場合は、丁寧に謝罪し、店舗の手順に従って対応します。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 71,
+    "question_jp": "お客様から食物アレルギーについて質問され、自分では正確に分からない場合、どうしますか。",
+    "question_vi": "Khách hỏi về dị ứng thực phẩm nhưng bạn không biết chính xác. Nên làm gì?",
+    "correct_answer": "B",
+    "explanation_jp": "アレルギー対応では推測せず、原材料などの正確な情報を確認することが重要です。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 72,
+    "question_jp": "料理を提供するときに確認することとして適切なのはどれですか。",
+    "question_vi": "Khi phục vụ món ăn, điều nào phù hợp cần kiểm tra?",
+    "correct_answer": "A",
+    "explanation_jp": "提供前に注文内容と料理を確認し、誤提供を防ぎます。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 73,
+    "question_jp": "店内の通路に水がこぼれている場合、適切な対応はどれですか。",
+    "question_vi": "Nếu nước bị đổ trên lối đi trong cửa hàng, xử lý nào phù hợp?",
+    "correct_answer": "B",
+    "explanation_jp": "お客様や従業員の転倒事故を防ぐため、危険箇所を速やかに処理します。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 74,
+    "question_jp": "会計時に重要なことはどれですか。",
+    "question_vi": "Điều nào quan trọng khi thanh toán?",
+    "correct_answer": "A",
+    "explanation_jp": "会計では注文内容や金額を正確に確認して処理します。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 75,
+    "question_jp": "高齢のお客様への接客として適切なのはどれですか。",
+    "question_vi": "Cách phục vụ nào phù hợp với khách cao tuổi?",
+    "correct_answer": "A",
+    "explanation_jp": "お客様の状況に合わせて、分かりやすく丁寧な接客を行います。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 76,
+    "question_jp": "お客様が店内で転倒しました。適切な対応はどれですか。",
+    "question_vi": "Khách bị ngã trong cửa hàng. Xử lý nào phù hợp?",
+    "correct_answer": "B",
+    "explanation_jp": "まず安全とお客様の状態を確認し、状況に応じて責任者への報告など必要な対応を行います。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 77,
+    "question_jp": "【判断試験】冷蔵庫を確認すると、生肉の容器から汁が出て、その下にある調理済み食品の容器に付着していました。最も適切な対応はどれですか。",
+    "question_vi": "[Phán đoán] Nước từ hộp thịt sống đã dính vào hộp thực phẩm chín bên dưới. Xử lý nào phù hợp nhất?",
+    "correct_answer": "B",
+    "explanation_jp": "生肉由来の汚染が調理済み食品に及んだ可能性があるため、交差汚染として適切に対応します。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 78,
+    "question_jp": "【判断試験】調理中の従業員がトイレから戻り、手を洗わずに作業を再開しようとしています。適切な対応はどれですか。",
+    "question_vi": "[Phán đoán] Nhân viên từ nhà vệ sinh quay lại và định làm việc mà chưa rửa tay. Xử lý nào phù hợp?",
+    "correct_answer": "A",
+    "explanation_jp": "トイレ使用後は適切な手洗いが必要です。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 79,
+    "question_jp": "【判断試験】冷蔵庫の温度記録を確認すると、基準を超える状態が続いていました。適切なのはどれですか。",
+    "question_vi": "[Phán đoán] Ghi chép cho thấy nhiệt độ tủ lạnh liên tục vượt tiêu chuẩn. Xử lý nào phù hợp?",
+    "correct_answer": "C",
+    "explanation_jp": "温度管理の異常は食品安全に関係するため、原因と食品への影響を確認します。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 80,
+    "question_jp": "【計画立案】手洗い確認を1日に4回行います。7日間では合計何回確認しますか。",
+    "question_vi": "[Lập kế hoạch] Kiểm tra rửa tay 4 lần/ngày. Trong 7 ngày tổng cộng kiểm tra bao nhiêu lần?",
+    "correct_answer": "B",
+    "explanation_jp": "4回 × 7日 = 28回です。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 81,
+    "question_jp": "【計画立案】消毒液を1回の清掃で250ml使用します。1日に4回清掃する場合、1日に必要な量は何mlですか。",
+    "question_vi": "[Lập kế hoạch] Mỗi lần vệ sinh dùng 250ml dung dịch khử trùng. Vệ sinh 4 lần/ngày cần bao nhiêu ml?",
+    "correct_answer": "C",
+    "explanation_jp": "250ml × 4回 = 1,000mlです。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 82,
+    "question_jp": "【判断試験】加熱した肉の中心部が十分に加熱されていない可能性があります。適切な対応はどれですか。",
+    "question_vi": "[Phán đoán] Có khả năng phần giữa của thịt chưa được gia nhiệt đầy đủ. Xử lý nào phù hợp?",
+    "correct_answer": "B",
+    "explanation_jp": "安全性を確保するため、必要な中心部の加熱状態を確認します。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 83,
+    "question_jp": "【判断試験】盛り付け中の料理に異物を発見しました。適切なのはどれですか。",
+    "question_vi": "[Phán đoán] Phát hiện dị vật trong món đang trình bày. Xử lý nào phù hợp?",
+    "correct_answer": "A",
+    "explanation_jp": "異物混入時は提供を止め、原因確認など必要な対応を行います。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 84,
+    "question_jp": "【判断試験】冷凍食品を室温の高い場所に長時間放置して解凍しています。適切な対応はどれですか。",
+    "question_vi": "[Phán đoán] Thực phẩm đông lạnh đang được để lâu ở nơi nhiệt độ cao để rã đông. Xử lý nào phù hợp?",
+    "correct_answer": "C",
+    "explanation_jp": "解凍中の微生物増殖などを防ぐため、適切な方法で解凍します。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 85,
+    "question_jp": "【計画立案】1人分に180gの食材を使います。25人分では何g必要ですか。",
+    "question_vi": "[Lập kế hoạch] Mỗi phần cần 180g nguyên liệu. 25 phần cần bao nhiêu gram?",
+    "correct_answer": "B",
+    "explanation_jp": "180g × 25 = 4,500gです。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 86,
+    "question_jp": "【計画立案】8人分の料理に1,600gの食材を使用します。同じ分量で30人分作る場合、何g必要ですか。",
+    "question_vi": "[Lập kế hoạch] 8 phần dùng 1.600g nguyên liệu. Với cùng định lượng, 30 phần cần bao nhiêu?",
+    "correct_answer": "C",
+    "explanation_jp": "1,600g ÷ 8 = 200g/人、200g × 30 = 6,000gです。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 87,
+    "question_jp": "【判断試験】お客様から「この料理に卵は入っていますか」と聞かれましたが、自分では分かりません。適切なのはどれですか。",
+    "question_vi": "[Phán đoán] Khách hỏi món này có trứng không nhưng bạn không biết. Xử lý nào phù hợp?",
+    "correct_answer": "B",
+    "explanation_jp": "アレルギーに関係する情報は推測せず、正確に確認します。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 88,
+    "question_jp": "【判断試験】店内の通路に飲み物がこぼれ、お客様が近づいています。適切なのはどれですか。",
+    "question_vi": "[Phán đoán] Đồ uống bị đổ trên lối đi và khách đang tới gần. Xử lý nào phù hợp?",
+    "correct_answer": "A",
+    "explanation_jp": "転倒事故を防ぐため、危険箇所を速やかに処理します。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 89,
+    "question_jp": "【判断試験】注文した料理が長時間届かないとお客様から申し出がありました。適切なのはどれですか。",
+    "question_vi": "[Phán đoán] Khách báo món đã gọi rất lâu nhưng chưa tới. Xử lý nào phù hợp?",
+    "correct_answer": "C",
+    "explanation_jp": "注文状況を確認し、お客様へ丁寧に説明・対応します。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 90,
+    "question_jp": "【計画立案】会計は3,680円です。お客様から5,000円を受け取りました。お釣りはいくらですか。",
+    "question_vi": "[Lập kế hoạch] Hóa đơn 3.680 yên, khách đưa 5.000 yên. Tiền thừa bao nhiêu?",
+    "correct_answer": "B",
+    "explanation_jp": "5,000円 - 3,680円 = 1,320円です。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 91,
+    "question_jp": "【計画立案】4人のお客様の会計がそれぞれ980円、1,200円、850円、1,470円です。合計はいくらですか。",
+    "question_vi": "[Lập kế hoạch] Hóa đơn của 4 khách lần lượt là 980, 1.200, 850 và 1.470 yên. Tổng cộng bao nhiêu?",
+    "correct_answer": "C",
+    "explanation_jp": "980 + 1,200 + 850 + 1,470 = 4,500円です。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 92,
+    "question_jp": "調理場に入る前に確認することとして、最も適切なものはどれですか。",
+    "question_vi": "Trước khi vào khu vực bếp, điều nào cần kiểm tra phù hợp nhất?",
+    "correct_answer": "A",
+    "explanation_jp": "調理場へ入る前には、手指や服装など衛生状態を確認します。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 93,
+    "question_jp": "冷蔵庫に食品を入れすぎることによる問題はどれですか。",
+    "question_vi": "Vấn đề khi nhét quá nhiều thực phẩm vào tủ lạnh là gì?",
+    "correct_answer": "A",
+    "explanation_jp": "食品を詰め込みすぎると冷気の循環が悪くなり、適切な温度管理が難しくなります。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 94,
+    "question_jp": "手洗いが必要なタイミングとして適切なものはどれですか。",
+    "question_vi": "Thời điểm nào thích hợp để rửa tay?",
+    "correct_answer": "A",
+    "explanation_jp": "トイレの後など、汚染の可能性がある場合には必ず手洗いを行います。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 95,
+    "question_jp": "食品を床に直接置いてはいけない主な理由は何ですか。",
+    "question_vi": "Lý do chính không được đặt thực phẩm trực tiếp xuống sàn là gì?",
+    "correct_answer": "A",
+    "explanation_jp": "床は汚染されている可能性が高いため、食品を直接置いてはいけません。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 96,
+    "question_jp": "清掃用の薬剤を食品の近くに保管しない理由として適切なのはどれですか。",
+    "question_vi": "Tại sao không nên bảo quản hóa chất vệ sinh gần thực phẩm?",
+    "correct_answer": "A",
+    "explanation_jp": "洗剤や薬剤は誤使用や食品への混入を防ぐため、決められた場所で管理します。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 97,
+    "question_jp": "冷凍庫から取り出した食品を解凍した後、再び冷凍する場合に注意する理由は何ですか。",
+    "question_vi": "Tại sao cần cẩn thận khi đông lạnh lại thực phẩm đã rã đông?",
+    "correct_answer": "A",
+    "explanation_jp": "解凍・再冷凍の繰り返しは品質低下や衛生上のリスクにつながるため、店舗のルールに従います。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 98,
+    "question_jp": "調理従事者が発熱している場合の対応として適切なのはどれですか。",
+    "question_vi": "Nhân viên chế biến bị sốt thì xử lý nào phù hợp?",
+    "correct_answer": "A",
+    "explanation_jp": "健康状態に異常がある場合は自己判断せず責任者へ報告します。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 99,
+    "question_jp": "使用後のふきんを衛生的に管理する方法として適切なのはどれですか。",
+    "question_vi": "Cách quản lý khăn lau sau khi sử dụng sao cho vệ sinh là gì?",
+    "correct_answer": "A",
+    "explanation_jp": "ふきんは汚染源にならないよう、洗浄・消毒・乾燥など適切に管理します。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 100,
+    "question_jp": "食品の保管で先入れ先出しを行う目的として適切なのはどれですか。",
+    "question_vi": "Mục đích của nguyên tắc nhập trước xuất trước trong bảo quản thực phẩm là gì?",
+    "correct_answer": "A",
+    "explanation_jp": "先入れ先出しによって在庫や期限を適切に管理できます。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 101,
+    "question_jp": "調理場で害虫を見つけた場合、適切な対応はどれですか。",
+    "question_vi": "Nếu phát hiện côn trùng gây hại trong bếp, nên xử lý thế nào?",
+    "correct_answer": "A",
+    "explanation_jp": "害虫は食品汚染につながるため、発見した場合は報告し適切に対応します。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 102,
+    "question_jp": "同じ料理を毎回同じ品質で提供するために重要なことはどれですか。",
+    "question_vi": "Điều quan trọng để luôn phục vụ cùng một món với chất lượng ổn định là gì?",
+    "correct_answer": "A",
+    "explanation_jp": "レシピと標準量を守ることで品質を安定させます。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 103,
+    "question_jp": "包丁を使用するときの安全な方法として適切なのはどれですか。",
+    "question_vi": "Cách sử dụng dao an toàn là gì?",
+    "correct_answer": "A",
+    "explanation_jp": "包丁は正しい取り扱い方法を守り、事故を防ぎます。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 104,
+    "question_jp": "揚げ物を調理するときに注意することはどれですか。",
+    "question_vi": "Khi chiên thực phẩm cần chú ý điều gì?",
+    "correct_answer": "A",
+    "explanation_jp": "揚げ物では油温と油の状態を適切に管理することが重要です。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 105,
+    "question_jp": "野菜を洗浄する目的として最も適切なものはどれですか。",
+    "question_vi": "Mục đích phù hợp nhất của việc rửa rau là gì?",
+    "correct_answer": "A",
+    "explanation_jp": "野菜は必要に応じて洗浄し、汚れや異物を除去します。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 106,
+    "question_jp": "注文数に合わせて食材を準備することで期待できることはどれですか。",
+    "question_vi": "Chuẩn bị nguyên liệu phù hợp số lượng order giúp điều gì?",
+    "correct_answer": "A",
+    "explanation_jp": "必要量を把握して準備することで食品ロスや過剰仕込みを減らせます。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 107,
+    "question_jp": "盛り付ける前に皿を確認する理由として適切なのはどれですか。",
+    "question_vi": "Tại sao cần kiểm tra đĩa trước khi trình bày món?",
+    "correct_answer": "A",
+    "explanation_jp": "清潔で破損のない食器を使用することが安全な提供につながります。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 108,
+    "question_jp": "食材の切り方をそろえる利点として適切なのはどれですか。",
+    "question_vi": "Lợi ích của việc cắt nguyên liệu đồng đều là gì?",
+    "correct_answer": "A",
+    "explanation_jp": "大きさをそろえることで加熱のばらつきを減らし、品質を安定させやすくなります。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 109,
+    "question_jp": "大量調理をするときに重要なことはどれですか。",
+    "question_vi": "Khi nấu số lượng lớn, điều nào quan trọng?",
+    "correct_answer": "A",
+    "explanation_jp": "大量調理では量、時間、作業手順などを計画的に確認します。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 110,
+    "question_jp": "調理機器に異常な音がした場合の適切な対応はどれですか。",
+    "question_vi": "Nếu thiết bị bếp phát ra tiếng bất thường, xử lý nào phù hợp?",
+    "correct_answer": "A",
+    "explanation_jp": "異常がある機器を無理に使用すると事故につながるため、使用を止めて報告します。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 111,
+    "question_jp": "料理を提供する直前の確認として適切なのはどれですか。",
+    "question_vi": "Kiểm tra nào phù hợp ngay trước khi phục vụ món?",
+    "correct_answer": "A",
+    "explanation_jp": "誤提供を防ぐため、注文と料理を確認してから提供します。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 112,
+    "question_jp": "お客様を席へ案内するときに大切なことはどれですか。",
+    "question_vi": "Điều quan trọng khi hướng dẫn khách vào chỗ ngồi là gì?",
+    "correct_answer": "A",
+    "explanation_jp": "店内の状況を確認しながら丁寧に案内します。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 113,
+    "question_jp": "注文を復唱する主な目的は何ですか。",
+    "question_vi": "Mục đích chính của việc nhắc lại order là gì?",
+    "correct_answer": "A",
+    "explanation_jp": "注文内容を復唱して確認することで誤りを防ぎます。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 114,
+    "question_jp": "お客様から質問されて分からない場合、適切な対応はどれですか。",
+    "question_vi": "Nếu khách hỏi nhưng bạn không biết, xử lý nào phù hợp?",
+    "correct_answer": "A",
+    "explanation_jp": "分からない場合は推測せず、確認して正確に案内します。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 115,
+    "question_jp": "車いすのお客様への対応として適切なのはどれですか。",
+    "question_vi": "Cách phục vụ phù hợp đối với khách dùng xe lăn là gì?",
+    "correct_answer": "A",
+    "explanation_jp": "お客様の意思を確認し、必要に応じて安全に配慮した支援を行います。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 116,
+    "question_jp": "店内で大きな音がしてお客様が驚いている場合、どうしますか。",
+    "question_vi": "Nếu có tiếng động lớn trong cửa hàng làm khách giật mình, nên làm gì?",
+    "correct_answer": "A",
+    "explanation_jp": "安全を確認し、お客様が不安にならないよう必要な案内を行います。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 117,
+    "question_jp": "会計時に金額を間違えたことに気づいた場合、適切な対応はどれですか。",
+    "question_vi": "Nếu phát hiện tính sai tiền, xử lý nào phù hợp?",
+    "correct_answer": "A",
+    "explanation_jp": "会計ミスは確認し、速やかに訂正して適切に対応します。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 118,
+    "question_jp": "お客様の忘れ物を見つけた場合の対応として適切なのはどれですか。",
+    "question_vi": "Nếu phát hiện đồ khách bỏ quên, nên xử lý thế nào?",
+    "correct_answer": "A",
+    "explanation_jp": "忘れ物は店舗の規定に従って適切に管理します。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 119,
+    "question_jp": "混雑時の接客で重要なことはどれですか。",
+    "question_vi": "Điều quan trọng khi phục vụ lúc đông khách là gì?",
+    "correct_answer": "A",
+    "explanation_jp": "混雑時も安全と正確さを優先し、落ち着いて対応します。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 120,
+    "question_jp": "お客様が店内で気分が悪くなった場合、適切な対応はどれですか。",
+    "question_vi": "Nếu khách cảm thấy không khỏe trong cửa hàng, xử lý nào phù hợp?",
+    "correct_answer": "A",
+    "explanation_jp": "お客様の状態を確認し、必要に応じて責任者への報告や救護対応を行います。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 121,
+    "question_jp": "閉店時に客席で確認すべきこととして適切なのはどれですか。",
+    "question_vi": "Khi đóng cửa, điều nào cần kiểm tra tại khu vực khách?",
+    "correct_answer": "A",
+    "explanation_jp": "閉店時には安全、忘れ物、清掃状態などを確認します。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 122,
+    "question_jp": "冷蔵庫の扉が長時間開いたままになっています。最初に行うべき対応はどれですか。",
+    "question_vi": "Cửa tủ lạnh đã mở trong thời gian dài. Trước tiên nên làm gì?",
+    "correct_answer": "A",
+    "explanation_jp": "温度上昇の可能性があるため、まず扉を閉め、温度や食品の状態を確認します。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 123,
+    "question_jp": "調理台に生肉の汁がこぼれました。次の対応として適切なのはどれですか。",
+    "question_vi": "Nước thịt sống đổ lên bàn chế biến. Xử lý nào phù hợp tiếp theo?",
+    "correct_answer": "A",
+    "explanation_jp": "生肉由来の汚染を広げないよう、適切に洗浄・消毒します。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 124,
+    "question_jp": "従業員が手に傷を負っています。食品を扱う場合の対応として適切なのはどれですか。",
+    "question_vi": "Nhân viên bị thương ở tay. Nếu xử lý thực phẩm thì nên làm gì?",
+    "correct_answer": "A",
+    "explanation_jp": "傷口からの汚染を防ぐため、適切な保護と店舗ルールに従った対応が必要です。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 125,
+    "question_jp": "焼いた肉の中心がまだ生のように見えます。どうしますか。",
+    "question_vi": "Thịt đã nướng nhưng phần giữa vẫn có vẻ sống. Nên làm gì?",
+    "correct_answer": "A",
+    "explanation_jp": "中心まで必要な加熱ができていることを確認してから提供します。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 126,
+    "question_jp": "注文票と完成した料理が違うことに気づきました。どうしますか。",
+    "question_vi": "Phát hiện món hoàn thành không khớp phiếu order. Nên làm gì?",
+    "correct_answer": "A",
+    "explanation_jp": "誤提供防止のため、注文と料理を確認してから提供します。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 127,
+    "question_jp": "調理機器から煙が出ています。最も適切な対応はどれですか。",
+    "question_vi": "Thiết bị bếp đang bốc khói. Xử lý nào phù hợp nhất?",
+    "correct_answer": "A",
+    "explanation_jp": "機器の異常時は安全を最優先し、使用停止と報告を行います。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 128,
+    "question_jp": "お客様が注文した飲み物をこぼしてしまいました。対応として適切なのはどれですか。",
+    "question_vi": "Khách làm đổ đồ uống. Xử lý nào phù hợp?",
+    "correct_answer": "A",
+    "explanation_jp": "転倒事故などを防ぐため、こぼれた液体は速やかに安全に処理します。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 129,
+    "question_jp": "お客様が料理に異物があると申し出ました。最初の対応はどれですか。",
+    "question_vi": "Khách báo có dị vật trong món ăn. Xử lý đầu tiên là gì?",
+    "correct_answer": "A",
+    "explanation_jp": "異物混入の申し出は重大なため、状況確認と責任者への報告を行います。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 130,
+    "question_jp": "通路に荷物が置かれ、お客様が通りにくくなっています。どうしますか。",
+    "question_vi": "Hàng hóa đặt trên lối đi khiến khách khó đi. Nên làm gì?",
+    "correct_answer": "A",
+    "explanation_jp": "お客様や従業員の安全のため、通路を確保します。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 131,
+    "question_jp": "消毒液を1L作ります。原液100mlに対して水900mlを使います。3L作る場合、原液は何ml必要ですか。",
+    "question_vi": "Pha 1L dung dịch dùng 100ml dung dịch gốc và 900ml nước. Pha 3L cần bao nhiêu ml dung dịch gốc?",
+    "correct_answer": "A",
+    "explanation_jp": "100ml × 3 = 300mlです。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 132,
+    "question_jp": "冷蔵庫を1時間ごとに確認します。8時間勤務の場合、勤務開始時を除いて何回確認しますか。",
+    "question_vi": "Kiểm tra tủ lạnh mỗi giờ. Trong ca 8 giờ, không tính lúc bắt đầu thì kiểm tra bao nhiêu lần?",
+    "correct_answer": "A",
+    "explanation_jp": "1時間ごとに8時間勤務するため、開始時を除けば8回の確認です。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 133,
+    "question_jp": "1人分に80gの肉を使います。25人分では何g必要ですか。",
+    "question_vi": "Mỗi phần dùng 80g thịt. 25 phần cần bao nhiêu gram?",
+    "correct_answer": "A",
+    "explanation_jp": "80 × 25 = 2,000gです。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 134,
+    "question_jp": "1皿に40mlのスープを使います。18皿では何ml必要ですか。",
+    "question_vi": "Mỗi đĩa dùng 40ml súp. 18 đĩa cần bao nhiêu ml?",
+    "correct_answer": "A",
+    "explanation_jp": "40 × 18 = 720mlです。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 135,
+    "question_jp": "会計は3,680円です。5,000円を受け取りました。お釣りはいくらですか。",
+    "question_vi": "Hóa đơn 3.680 yên, khách đưa 5.000 yên. Tiền thừa bao nhiêu?",
+    "correct_answer": "A",
+    "explanation_jp": "5,000 - 3,680 = 1,320円です。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 136,
+    "question_jp": "4人のお客様がそれぞれ900円、1,100円、750円、1,250円の商品を注文しました。合計はいくらですか。",
+    "question_vi": "Bốn khách gọi món giá 900, 1.100, 750 và 1.250 yên. Tổng cộng bao nhiêu?",
+    "correct_answer": "A",
+    "explanation_jp": "900 + 1,100 + 750 + 1,250 = 4,000円です。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 137,
+    "question_jp": "調理前に爪を確認する理由として最も適切なものはどれですか。",
+    "question_vi": "Tại sao cần kiểm tra móng tay trước khi chế biến?",
+    "correct_answer": "A",
+    "explanation_jp": "爪は短く清潔に保ち、汚れや異物混入を防ぎます。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 138,
+    "question_jp": "食品を保管するときに容器へふたをする主な目的は何ですか。",
+    "question_vi": "Mục đích chính của việc đậy nắp hộp khi bảo quản thực phẩm là gì?",
+    "correct_answer": "A",
+    "explanation_jp": "適切にふたをすることで、異物や他の食品からの汚染を防ぎやすくなります。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 139,
+    "question_jp": "ごみ箱を衛生的に管理する方法として適切なのはどれですか。",
+    "question_vi": "Cách quản lý thùng rác hợp vệ sinh là gì?",
+    "correct_answer": "A",
+    "explanation_jp": "ごみは害虫や悪臭、汚染の原因になるため適切に管理します。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 140,
+    "question_jp": "調理中に髪の毛が食品に入るのを防ぐために適切なのはどれですか。",
+    "question_vi": "Cách phù hợp để tránh tóc rơi vào thực phẩm là gì?",
+    "correct_answer": "A",
+    "explanation_jp": "毛髪混入を防ぐため、帽子などを正しく着用します。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 141,
+    "question_jp": "冷蔵食品を受け取るときに確認することとして適切なのはどれですか。",
+    "question_vi": "Khi nhận thực phẩm lạnh, điều nào cần kiểm tra?",
+    "correct_answer": "A",
+    "explanation_jp": "納品時には温度、期限、包装、品質などを確認します。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 142,
+    "question_jp": "洗剤を使用するときに重要なことはどれですか。",
+    "question_vi": "Điều quan trọng khi sử dụng chất tẩy rửa là gì?",
+    "correct_answer": "A",
+    "explanation_jp": "薬剤は表示や店舗の手順に従って安全に使用します。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 143,
+    "question_jp": "生卵を扱った後の対応として適切なのはどれですか。",
+    "question_vi": "Sau khi xử lý trứng sống, hành động nào phù hợp?",
+    "correct_answer": "A",
+    "explanation_jp": "生の食品を扱った後は交差汚染防止のため適切な衛生管理を行います。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 144,
+    "question_jp": "床を清掃するとき、食品への汚染を防ぐために重要なことはどれですか。",
+    "question_vi": "Khi vệ sinh sàn, điều quan trọng để tránh nhiễm bẩn thực phẩm là gì?",
+    "correct_answer": "A",
+    "explanation_jp": "清掃時には汚れを周囲へ広げないよう注意します。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 145,
+    "question_jp": "解凍中の食品を長時間室温に置くことを避ける理由は何ですか。",
+    "question_vi": "Tại sao tránh để thực phẩm đang rã đông ở nhiệt độ phòng quá lâu?",
+    "correct_answer": "A",
+    "explanation_jp": "解凍は衛生的な方法で行い、温度管理に注意します。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 146,
+    "question_jp": "食品衛生の記録を残す目的として適切なのはどれですか。",
+    "question_vi": "Mục đích phù hợp của việc lưu hồ sơ vệ sinh thực phẩm là gì?",
+    "correct_answer": "A",
+    "explanation_jp": "記録は衛生管理の実施状況を確認するために重要です。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 147,
+    "question_jp": "食材を使用する前に必要量を確認する理由として適切なのはどれですか。",
+    "question_vi": "Tại sao cần kiểm tra lượng nguyên liệu cần thiết trước khi sử dụng?",
+    "correct_answer": "A",
+    "explanation_jp": "必要量を把握することで効率的な仕込みと食品ロス削減につながります。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 148,
+    "question_jp": "鍋の取っ手が熱くなっている場合、適切な対応はどれですか。",
+    "question_vi": "Nếu tay cầm nồi đang nóng, xử lý nào phù hợp?",
+    "correct_answer": "A",
+    "explanation_jp": "熱い器具を扱うときはやけど防止のため安全な方法を取ります。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 149,
+    "question_jp": "複数の料理を同時に作るときに大切なことはどれですか。",
+    "question_vi": "Điều quan trọng khi nấu nhiều món cùng lúc là gì?",
+    "correct_answer": "A",
+    "explanation_jp": "作業の優先順位を考え、品質と提供時間を管理します。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 150,
+    "question_jp": "計量スプーンを使う利点として適切なのはどれですか。",
+    "question_vi": "Lợi ích của việc dùng thìa đong là gì?",
+    "correct_answer": "A",
+    "explanation_jp": "正しい計量によって味や品質を一定にしやすくなります。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 151,
+    "question_jp": "加熱後の料理を盛り付ける際に重要なことはどれですか。",
+    "question_vi": "Điều quan trọng khi trình bày món sau khi nấu là gì?",
+    "correct_answer": "A",
+    "explanation_jp": "加熱後の食品へ二次汚染が起こらないようにします。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 152,
+    "question_jp": "食材の下処理を効率よく行うために適切なのはどれですか。",
+    "question_vi": "Cách phù hợp để sơ chế nguyên liệu hiệu quả là gì?",
+    "correct_answer": "A",
+    "explanation_jp": "事前準備によって安全かつ効率的に作業できます。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 153,
+    "question_jp": "味見をするときの衛生的な方法として適切なのはどれですか。",
+    "question_vi": "Cách nếm thức ăn hợp vệ sinh là gì?",
+    "correct_answer": "A",
+    "explanation_jp": "味見には清潔な器具を使用し、食品を汚染しないようにします。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 154,
+    "question_jp": "料理の見た目をそろえるために重要なことはどれですか。",
+    "question_vi": "Điều quan trọng để món ăn có hình thức đồng đều là gì?",
+    "correct_answer": "A",
+    "explanation_jp": "盛り付け基準を守ることで品質を安定させます。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 155,
+    "question_jp": "調理中に食材が不足した場合の適切な対応はどれですか。",
+    "question_vi": "Nếu thiếu nguyên liệu trong lúc chế biến, xử lý nào phù hợp?",
+    "correct_answer": "A",
+    "explanation_jp": "食材変更はアレルギーや品質にも関わるため自己判断で行いません。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 156,
+    "question_jp": "使用済みの油を管理するときに重要なことはどれですか。",
+    "question_vi": "Điều quan trọng khi quản lý dầu đã sử dụng là gì?",
+    "correct_answer": "A",
+    "explanation_jp": "油の劣化状態を確認し、店舗のルールに従って交換・処理します。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 157,
+    "question_jp": "お客様にメニューを説明するときに重要なことはどれですか。",
+    "question_vi": "Điều quan trọng khi giải thích menu cho khách là gì?",
+    "correct_answer": "A",
+    "explanation_jp": "メニュー内容は正確に案内します。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 158,
+    "question_jp": "料理を提供するときの声かけとして適切なのはどれですか。",
+    "question_vi": "Cách nói phù hợp khi phục vụ món là gì?",
+    "correct_answer": "A",
+    "explanation_jp": "丁寧な声かけと確認によって誤提供を防ぎます。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 159,
+    "question_jp": "店内が満席の場合、お客様への対応として適切なのはどれですか。",
+    "question_vi": "Nếu cửa hàng kín chỗ, xử lý khách thế nào là phù hợp?",
+    "correct_answer": "A",
+    "explanation_jp": "混雑状況を丁寧に説明し、必要な案内を行います。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 160,
+    "question_jp": "お客様から追加注文を受けたときに大切なことはどれですか。",
+    "question_vi": "Điều quan trọng khi nhận order bổ sung là gì?",
+    "correct_answer": "A",
+    "explanation_jp": "追加注文も復唱などで正確に確認します。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 161,
+    "question_jp": "電話対応で重要なことはどれですか。",
+    "question_vi": "Điều quan trọng khi nghe điện thoại là gì?",
+    "correct_answer": "A",
+    "explanation_jp": "電話でも丁寧で正確な対応を行います。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 162,
+    "question_jp": "お客様が会計を別々にしたいと申し出た場合、どうしますか。",
+    "question_vi": "Nếu khách muốn thanh toán riêng, nên làm gì?",
+    "correct_answer": "A",
+    "explanation_jp": "店舗のルールに従って正確に会計対応します。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 163,
+    "question_jp": "小さな子ども連れのお客様への対応で重要なことはどれですか。",
+    "question_vi": "Điều quan trọng khi phục vụ khách có trẻ nhỏ là gì?",
+    "correct_answer": "A",
+    "explanation_jp": "お客様の状況に応じて安全に配慮します。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 164,
+    "question_jp": "お客様が料理の写真を見せて注文した場合、重要なことはどれですか。",
+    "question_vi": "Nếu khách cho xem ảnh món để gọi, điều nào quan trọng?",
+    "correct_answer": "A",
+    "explanation_jp": "注文内容を正しく確認して誤注文を防ぎます。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 165,
+    "question_jp": "会計後にレシートを渡すときの対応として適切なのはどれですか。",
+    "question_vi": "Cách phù hợp khi đưa hóa đơn sau thanh toán là gì?",
+    "correct_answer": "A",
+    "explanation_jp": "会計内容を確認し、正しいレシートを渡します。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 166,
+    "question_jp": "外国人のお客様と意思疎通が難しい場合、適切な対応はどれですか。",
+    "question_vi": "Nếu khó giao tiếp với khách nước ngoài, nên xử lý thế nào?",
+    "correct_answer": "A",
+    "explanation_jp": "言葉が通じにくい場合も、表示や簡単な表現などを活用して丁寧に確認します。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 167,
+    "question_jp": "冷蔵庫内で生魚の汁が他の食品に付着しているのを発見しました。適切な対応はどれですか。",
+    "question_vi": "Phát hiện nước cá sống dính vào thực phẩm khác trong tủ lạnh. Xử lý phù hợp là gì?",
+    "correct_answer": "A",
+    "explanation_jp": "交差汚染の可能性があるため、自己判断で提供せず適切に対応します。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 168,
+    "question_jp": "手洗い場に石けんがありません。調理前にどうしますか。",
+    "question_vi": "Không có xà phòng tại bồn rửa tay. Trước khi chế biến nên làm gì?",
+    "correct_answer": "A",
+    "explanation_jp": "必要な手洗い環境を整えてから作業します。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 169,
+    "question_jp": "食品庫で期限表示のない容器を見つけました。どうしますか。",
+    "question_vi": "Phát hiện hộp thực phẩm không có nhãn hạn trong kho. Nên làm gì?",
+    "correct_answer": "A",
+    "explanation_jp": "不明な食品は自己判断で使用せず確認します。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 170,
+    "question_jp": "スープを加熱中に焦げたにおいがしました。適切な対応はどれですか。",
+    "question_vi": "Trong lúc hâm súp có mùi khét. Xử lý phù hợp là gì?",
+    "correct_answer": "A",
+    "explanation_jp": "異常を感じた場合は状態を確認して品質や安全を確保します。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 171,
+    "question_jp": "料理を盛り付けた後、皿にひびがあることに気づきました。どうしますか。",
+    "question_vi": "Sau khi trình bày món, phát hiện đĩa bị nứt. Nên làm gì?",
+    "correct_answer": "A",
+    "explanation_jp": "破損した食器は事故や異物混入につながるため使用しません。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 172,
+    "question_jp": "注文より多く料理を作ってしまいました。適切な対応はどれですか。",
+    "question_vi": "Đã làm nhiều món hơn số order. Xử lý nào phù hợp?",
+    "correct_answer": "A",
+    "explanation_jp": "余剰食品は自己判断せず、店舗のルールに従います。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 173,
+    "question_jp": "お客様が熱い料理でやけどをしたと申し出ました。適切な対応はどれですか。",
+    "question_vi": "Khách báo bị bỏng do món nóng. Xử lý phù hợp là gì?",
+    "correct_answer": "A",
+    "explanation_jp": "安全確認と必要な救護、報告を速やかに行います。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 174,
+    "question_jp": "お客様が注文していない料理が会計に入っています。どうしますか。",
+    "question_vi": "Hóa đơn có món khách không gọi. Nên làm gì?",
+    "correct_answer": "A",
+    "explanation_jp": "会計内容を正確に確認してミスを訂正します。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 175,
+    "question_jp": "入口付近の床が雨で濡れています。適切な対応はどれですか。",
+    "question_vi": "Sàn gần cửa vào bị ướt do mưa. Xử lý phù hợp là gì?",
+    "correct_answer": "A",
+    "explanation_jp": "濡れた床は転倒事故につながるため速やかに対応します。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 176,
+    "question_jp": "清掃用の希釈液を2L作るのに原液40mlが必要です。6L作る場合、原液は何ml必要ですか。",
+    "question_vi": "Pha 2L dung dịch cần 40ml dung dịch gốc. Pha 6L cần bao nhiêu ml?",
+    "correct_answer": "A",
+    "explanation_jp": "40ml × 3 = 120mlです。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 177,
+    "question_jp": "冷蔵庫の温度を2時間ごとに確認します。10時間で何回確認しますか。",
+    "question_vi": "Kiểm tra nhiệt độ tủ lạnh mỗi 2 giờ. Trong 10 giờ kiểm tra bao nhiêu lần?",
+    "correct_answer": "A",
+    "explanation_jp": "10 ÷ 2 = 5回です。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 178,
+    "question_jp": "1人分に120gの野菜を使います。15人分では何g必要ですか。",
+    "question_vi": "Mỗi phần dùng 120g rau. 15 phần cần bao nhiêu gram?",
+    "correct_answer": "A",
+    "explanation_jp": "120 × 15 = 1,800gです。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 179,
+    "question_jp": "1杯に25mlのソースを使います。24杯では何ml必要ですか。",
+    "question_vi": "Mỗi phần dùng 25ml sốt. 24 phần cần bao nhiêu ml?",
+    "correct_answer": "A",
+    "explanation_jp": "25 × 24 = 600mlです。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 180,
+    "question_jp": "会計は4,280円です。10,000円を受け取りました。お釣りはいくらですか。",
+    "question_vi": "Hóa đơn 4.280 yên, khách đưa 10.000 yên. Tiền thừa là bao nhiêu?",
+    "correct_answer": "A",
+    "explanation_jp": "10,000 - 4,280 = 5,720円です。",
+    "explanation_vi": ""
+  },
+  {
+    "id": 181,
+    "question_jp": "3組のお客様の会計が1,850円、2,300円、1,450円でした。合計はいくらですか。",
+    "question_vi": "Ba nhóm khách có hóa đơn 1.850, 2.300 và 1.450 yên. Tổng là bao nhiêu?",
+    "correct_answer": "A",
+    "explanation_jp": "1,850 + 2,300 + 1,450 = 5,600円です。",
+    "explanation_vi": ""
+  }
+]

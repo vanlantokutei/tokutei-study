@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>{{ exam.title }}</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f7fb;
+    color: #172033;
+}
+
+.container {
+    max-width: 750px;
+    margin: 60px auto;
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    padding: 35px;
+    border-radius: 18px;
+    box-shadow: 0 5px 20px rgba(0,0,0,.08);
+}
+
+h1 {
+    margin-top: 0;
+}
+
+.info {
+    margin: 25px 0;
+}
+
+.row {
+    padding: 14px 0;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    justify-content: space-between;
+}
+
+.notice {
+    background: #fff7ed;
+    padding: 18px;
+    border-radius: 12px;
+    margin: 25px 0;
+    line-height: 1.7;
+}
+
+.start {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    background: #2563eb;
+    color: white;
+    padding: 16px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.back {
+    display: block;
+    text-align: center;
+    margin-top: 18px;
+    color: #64748b;
+    text-decoration: none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<h1>🇯🇵 {{ exam.title }}</h1>
+
+<p>外食業 特定技能1号 模擬試験</p>
+
+<div class="info">
+
+    <div class="row">
+        <span>⏱ Thời gian</span>
+        <strong>{{ exam.time_limit }} phút</strong>
+    </div>
+
+    <div class="row">
+        <span>📝 Tổng số câu</span>
+        <strong>{{ total }} câu</strong>
+    </div>
+
+    <div class="row">
+        <span>📘 学科試験</span>
+        <strong>{{ theory_count }} câu</strong>
+    </div>
+
+    <div class="row">
+        <span>🛠 実技試験</span>
+        <strong>{{ practical_count }} câu</strong>
+    </div>
+
+    <div class="row">
+        <span>🔤 Lựa chọn</span>
+        <strong>3択 A / B / C</strong>
+    </div>
+
+</div>
+
+<div class="notice">
+<strong>Trước khi bắt đầu:</strong><br>
+• Đồng hồ chỉ bắt đầu sau khi bạn bấm nút bên dưới.<br>
+• Khi đã bắt đầu, thời gian sẽ chạy liên tục.<br>
+• Không đóng trình duyệt trong lúc làm bài.<br>
+• Khi hết thời gian, bài thi sẽ tự kết thúc.
+</div>
+
+<a class="start"
+   href="{% url 'start_exam' exam.id %}">
+    ▶ 試験を開始する<br>
+    Bắt đầu làm bài
+</a>
+
+<a class="back"
+   href="{% url 'exam_list' %}">
+    ← Quay lại danh sách đề
+</a>
+
+</div>
+</div>
+
+</body>
+</html>

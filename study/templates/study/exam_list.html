@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Bộ đề Tokutei 外食業</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6fa;
+    margin: 0;
+    padding: 30px;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+}
+
+.subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.exam {
+    background: white;
+    margin: 15px 0;
+    padding: 22px;
+    border-radius: 14px;
+    box-shadow: 0 3px 12px rgba(0,0,0,.08);
+}
+
+.exam h2 {
+    margin-top: 0;
+}
+
+.info {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.free {
+    color: #159447;
+    font-weight: bold;
+}
+
+.start {
+    display: inline-block;
+    background: #2563eb;
+    color: white;
+    padding: 11px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.start:hover {
+    opacity: .9;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🇯🇵 特定技能1号・外食業</h1>
+
+<div class="subtitle">
+    Bộ đề luyện thi
+</div>
+
+{% for exam in exams %}
+
+<div class="exam">
+
+    <h2>📝 {{ exam.title }}</h2>
+
+    <div class="info">
+        45 câu •
+        {% if exam.is_free %}
+            <span class="free">FREE</span>
+        {% else %}
+            🔒 PREMIUM
+        {% endif %}
+    </div>
+
+    <p>{{ exam.description }}</p>
+
+    {% if exam.is_free %}
+        <a class="start"
+           href="/tokutei1/exam/{{ exam.id }}/start/">
+            Bắt đầu làm bài →
+        </a>
+    {% endif %}
+
+</div>
+
+{% empty %}
+
+<p>Chưa có đề thi.</p>
+
+{% endfor %}
+
+</div>
+
+</body>
+</html>

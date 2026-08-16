@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tokutei Study - 外食業 1号</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f4f7fb;
+            color: #222;
+        }
+
+        .header {
+            background: #2563eb;
+            color: white;
+            padding: 35px 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+       }
+
+        .card {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 16px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        }
+
+        .button {
+            display: inline-block;
+            background: #2563eb;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="header">
+    <h1>特定技能1号・外食業</h1>
+    <p>Luyện thi Tokutei Ginou 1 - Ngành nhà hàng</p>
+</div>
+
+<div class="container">
+
+    <div class="card">
+        <h2>📚 Học theo chủ đề</h2>
+        <p>Học kiến thức bằng tiếng Nhật và tiếng Việt.</p>
+        <a class="button" href="{% url 'library' %}">Bắt đầu học</a>
+    </div>
+
+    <div class="card">
+        <h2>📝 Luyện câu hỏi</h2>
+        <p>Luyện câu hỏi theo từng chủ đề của kỳ thi.</p>
+        <a class="button" href="/tokutei1/practice/">Luyện ngay</a>
+    </div>
+
+    <div class="card">
+        <h2>⏱ Thi thử</h2>
+        <p>Làm bài thi mô phỏng và tự động tính điểm.</p>
+        <a class="button" href="#">Bắt đầu thi</a>
+    </div>
+
+    <div class="card">
+        <h2>📖 Tài liệu</h2>
+        <p>Tài liệu học 外食業 bằng tiếng Nhật và tiếng Việt.</p>
+        <a class="button" href="{% url 'library' %}">Xem tài liệu</a>
+    </div>
+
+</div>
+
+</body>
+</html>

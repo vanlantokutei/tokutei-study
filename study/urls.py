@@ -1,0 +1,80 @@
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path(
+        'tokutei1/exam/<int:exam_id>/retry-wrong/<int:index>/',
+        views.retry_wrong,
+        name='retry_wrong'
+    ),
+
+    path(
+        'tokutei1/exam/<int:exam_id>/intro/',
+        views.exam_intro,
+        name='exam_intro'
+    ),
+
+    path('', views.home, name='home'),
+
+    # Đường dẫn ngắn, dễ nhớ cho trang Tình huống ngành dịch vụ.
+    path('tinh-huong/', views.service_situations, name='service_situations_short'),
+
+    path('tokutei1/situations/', views.service_situations, name='service_situations'),
+    path(
+        'tokutei1/situations/progress/<int:situation_id>/',
+        views.toggle_situation_progress,
+        name='toggle_situation_progress'
+    ),
+
+    path('tokutei1/vocabulary/', views.vocabulary, name='vocabulary'),
+    path(
+        'tokutei1/vocabulary/progress/<int:entry_id>/',
+        views.toggle_vocabulary_progress,
+        name='toggle_vocabulary_progress'
+    ),
+
+    path('tokutei1/library/', views.library, name='library'),
+    path(
+        'tokutei1/library/progress/<int:lesson_id>/',
+        views.toggle_lesson_progress,
+        name='toggle_lesson_progress'
+    ),
+    path(
+        'tokutei1/library/<slug:category_slug>/<slug:lesson_slug>/',
+        views.lesson_detail,
+        name='lesson_detail'
+    ),
+
+    path(
+        'tokutei1/',
+        views.tokutei1,
+        name='tokutei1'
+    ),
+
+    path(
+        'tokutei1/practice/',
+        views.practice1,
+        name='practice1'
+    ),
+
+    path(
+        'tokutei1/exams/',
+        views.exam_list,
+        name='exam_list'
+    ),
+
+    path(
+        'tokutei1/exam/<int:exam_id>/',
+        views.take_exam,
+        name='take_exam'
+    ),
+
+    path(
+        'tokutei1/exam/<int:exam_id>/<int:question_number>/',
+        views.take_exam,
+        name='take_exam_question'
+    ),
+    path('tokutei1/exam/<int:exam_id>/result/', views.exam_result, name='exam_result'),
+    path('tokutei1/exam/<int:exam_id>/start/', views.start_exam, name='start_exam'),
+    path('tokutei1/exam/<int:exam_id>/wrong/', views.wrong_answers, name='wrong_answers'),
+]

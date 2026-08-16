@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>{{ exam.title }}</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f3f5f8;
+    color: #172033;
+}
+
+.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: white;
+    border-bottom: 1px solid #ddd;
+    padding: 14px 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.exam-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.timer {
+    background: #172033;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 9px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.timer.warning {
+    background: #c62828;
+}
+
+.layout {
+    max-width: 1200px;
+    margin: 25px auto;
+    padding: 0 15px;
+
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 20px;
+}
+
+.main {
+    background: white;
+    border-radius: 14px;
+    padding: 28px;
+    box-shadow: 0 3px 12px rgba(0,0,0,.08);
+}
+
+.side {
+    background: white;
+    border-radius: 14px;
+    padding: 20px;
+    height: fit-content;
+    box-shadow: 0 3px 12px rgba(0,0,0,.08);
+}
+
+.question-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    align-items: center;
+}
+
+.counter {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.badge {
+    background: #e8f0fe;
+    color: #1a5fd0;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.question {
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 1.7;
+    margin: 25px 0;
+}
+
+.answer {
+    display: block;
+    width: 100%;
+    padding: 17px;
+    margin: 12px 0;
+
+    border: 2px solid #dfe3e8;
+    border-radius: 11px;
+    background: white;
+
+    cursor: pointer;
+    font-size: 17px;
+}
+
+.answer:hover {
+    border-color: #2979ff;
+    background: #f7faff;
+}
+
+.answer.selected {
+    border-color: #2979ff;
+    background: #eaf2ff;
+}
+
+.answer input {
+    margin-right: 10px;
+    transform: scale(1.25);
+}
+
+.vi-box {
+    display: none;
+    margin: 20px 0;
+    padding: 16px;
+    background: #fff8e1;
+    border-radius: 10px;
+    line-height: 1.6;
+}
+
+.vi-option {
+    display: none;
+    margin: 8px 0 0 28px;
+    color: #555;
+    font-size: 15px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 28px;
+}
+
+.btn {
+    border: 0;
+    padding: 12px 18px;
+    border-radius: 9px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.btn-blue {
+    background: #1976d2;
+    color: white;
+}
+
+.btn-gray {
+    background: #e8eaed;
+}
+
+.btn-red {
+    background: #d93025;
+    color: white;
+}
+
+.nav-title {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.question-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+}
+
+.qnav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 38px;
+    border-radius: 7px;
+
+    text-decoration: none;
+    color: #333;
+
+    background: #eef0f2;
+    border: 1px solid #ddd;
+
+    font-weight: bold;
+}
+
+.qnav.answered {
+    background: #d9f2df;
+    border-color: #45a55b;
+}
+
+.qnav.current {
+    background: #1976d2;
+    border-color: #1976d2;
+    color: white;
+}
+
+.legend {
+    margin-top: 18px;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.dot {
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    border-radius: 3px;
+    margin-right: 5px;
+}
+
+.notdone {
+    background: #eef0f2;
+}
+
+.done {
+    background: #d9f2df;
+}
+
+.now {
+    background: #1976d2;
+}
+
+.submit-area {
+    margin-top: 22px;
+}
+
+.submit-area button {
+    width: 100%;
+}
+
+@media(max-width:850px) {
+    .layout {
+        grid-template-columns: 1fr;
+    }
+
+    .side {
+        order: -1;
+    }
+
+    .question-grid {
+        grid-template-columns: repeat(9, 1fr);
+    }
+}
+
+@media(max-width:550px) {
+    .topbar {
+        padding: 10px;
+    }
+
+    .exam-title {
+        font-size: 15px;
+    }
+
+    .timer {
+        font-size: 18px;
+        padding: 8px 10px;
+    }
+
+    .main {
+        padding: 18px;
+    }
+
+    .question {
+        font-size: 19px;
+    }
+
+    .question-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+ruby {
+    ruby-position: over;
+}
+
+rt {
+    font-size: 0.55em;
+    font-weight: normal;
+    color: #555;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+
+    <div class="exam-title">
+        🇯🇵 {{ exam.title }}
+    </div>
+
+    <div id="timer" class="timer">
+        70:00
+    </div>
+
+</div>
+
+
+<div class="layout">
+
+<main class="main">
+
+    <div class="question-top">
+
+        <div class="counter">
+            Câu {{ question_number }} / {{ total }}
+        </div>
+
+        <div class="badge">
+
+            {% if question.section == 'theory' %}
+
+                学科試験
+
+            {% else %}
+
+                実技試験
+
+                {% if question.practical_type == 'judgment' %}
+                    ・判断試験
+                {% elif question.practical_type == 'planning' %}
+                    ・計画立案
+                {% endif %}
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+
+    <div class="question">
+        {% if question.question_ruby %}
+            {{ question.question_ruby|safe }}
+        {% else %}
+            {{ question.question_ruby|safe }}
+        {% endif %}
+    </div>
+
+
+    {% if question.question_vi %}
+
+    <button
+        type="button"
+        class="btn btn-gray"
+        onclick="toggleVietnamese()">
+
+        🇻🇳 Xem tiếng Việt
+
+    </button>
+
+    <div id="questionVi" class="vi-box">
+        {{ question.question_vi }}
+    </div>
+
+    {% endif %}
+
+
+    <form method="post" id="examForm">
+
+        {% csrf_token %}
+
+        <label class="answer {% if selected_answer == 'A' %}selected{% endif %}">
+
+            <input
+                type="radio"
+                name="answer"
+                value="A"
+                {% if selected_answer == 'A' %}checked{% endif %}
+                onchange="saveAnswer()">
+
+            <strong>A.</strong>
+            {{ question.option_a_ruby|safe }}
+
+            <div class="vi-option">
+                🇻🇳 {{ question.option_a_vi }}
+            </div>
+
+        </label>
+
+
+        <label class="answer {% if selected_answer == 'B' %}selected{% endif %}">
+
+            <input
+                type="radio"
+                name="answer"
+                value="B"
+                {% if selected_answer == 'B' %}checked{% endif %}
+                onchange="saveAnswer()">
+
+            <strong>B.</strong>
+            {{ question.option_b_ruby|safe }}
+
+            <div class="vi-option">
+                🇻🇳 {{ question.option_b_vi }}
+            </div>
+
+        </label>
+
+
+        <label class="answer {% if selected_answer == 'C' %}selected{% endif %}">
+
+            <input
+                type="radio"
+                name="answer"
+                value="C"
+                {% if selected_answer == 'C' %}checked{% endif %}
+                onchange="saveAnswer()">
+
+            <strong>C.</strong>
+            {{ question.option_c_ruby|safe }}
+
+            <div class="vi-option">
+                🇻🇳 {{ question.option_c_vi }}
+            </div>
+
+        </label>
+
+    </form>
+
+
+    <div class="buttons">
+
+        {% if question_number > 1 %}
+
+        <button
+            class="btn btn-gray"
+            onclick="goQuestion({{ question_number|add:'-1' }})">
+
+            ← Câu trước
+
+        </button>
+
+        {% else %}
+
+        <span></span>
+
+        {% endif %}
+
+
+        {% if question_number < total %}
+
+        <button
+            class="btn btn-blue"
+            onclick="goQuestion({{ question_number|add:'1' }})">
+
+            Câu tiếp →
+
+        </button>
+
+        {% endif %}
+
+    </div>
+
+</main>
+
+
+<aside class="side">
+
+    <div class="nav-title">
+        Danh sách câu hỏi
+    </div>
+
+
+    <div class="question-grid">
+
+        {% for item in question_nav %}
+
+        <a
+            href="/tokutei1/exam/{{ exam.id }}/{{ item.number }}/"
+            class="qnav
+            {% if item.answered %}answered{% endif %}
+            {% if item.current %}current{% endif %}">
+
+            {{ item.number }}
+
+        </a>
+
+        {% endfor %}
+
+    </div>
+
+
+    <div class="legend">
+
+        <div>
+            <span class="dot now"></span>
+            Câu hiện tại
+        </div>
+
+        <div>
+            <span class="dot done"></span>
+            Đã trả lời
+        </div>
+
+        <div>
+            <span class="dot notdone"></span>
+            Chưa trả lời
+        </div>
+
+    </div>
+
+
+    <div class="submit-area">
+
+        <button
+            class="btn btn-red"
+            onclick="submitExam()">
+
+            🏁 Nộp bài
+
+        </button>
+
+    </div>
+
+</aside>
+
+</div>
+
+
+<script>
+
+let remaining = {{ remaining_seconds }};
+
+
+/* ==========================
+   ĐỒNG HỒ
+========================== */
+
+function updateTimer() {
+
+    if (remaining <= 0) {
+
+        window.location.href =
+            "/tokutei1/exam/{{ exam.id }}/result/";
+
+        return;
+    }
+
+    const minutes =
+        Math.floor(remaining / 60);
+
+    const seconds =
+        remaining % 60;
+
+    const timer =
+        document.getElementById("timer");
+
+    timer.textContent =
+        String(minutes).padStart(2, "0")
+        + ":" +
+        String(seconds).padStart(2, "0");
+
+    if (remaining <= 300) {
+        timer.classList.add("warning");
+    }
+
+    remaining--;
+}
+
+updateTimer();
+
+setInterval(
+    updateTimer,
+    1000
+);
+
+
+/* ==========================
+   CHỌN ĐÁP ÁN
+========================== */
+
+let submitting = false;
+
+function saveAnswer() {
+
+    if (submitting) return;
+
+    submitting = true;
+
+    document.querySelectorAll(".answer")
+        .forEach(function(el) {
+            el.classList.remove("selected");
+        });
+
+    const checked =
+        document.querySelector(
+            'input[name="answer"]:checked'
+        );
+
+    if (checked) {
+        checked.closest(".answer")
+            .classList.add("selected");
+    }
+
+    /*
+       Giữ hành vi hiện tại:
+       chọn đáp án -> lưu -> tự sang câu tiếp.
+    */
+
+    setTimeout(function() {
+        document.getElementById(
+            "examForm"
+        ).submit();
+    }, 300);
+}
+
+
+/* ==========================
+   ĐIỀU HƯỚNG
+========================== */
+
+function goQuestion(number) {
+
+    window.location.href =
+        "/tokutei1/exam/{{ exam.id }}/"
+        + number +
+        "/";
+}
+
+
+/* ==========================
+   TIẾNG VIỆT
+========================== */
+
+function toggleVietnamese() {
+
+    const questionVi =
+        document.getElementById("questionVi");
+
+    if (questionVi) {
+
+        questionVi.style.display =
+            questionVi.style.display === "block"
+            ? "none"
+            : "block";
+    }
+
+    document.querySelectorAll(
+        ".vi-option"
+    ).forEach(function(el) {
+
+        el.style.display =
+            el.style.display === "block"
+            ? "none"
+            : "block";
+    });
+}
+
+
+/* ==========================
+   NỘP BÀI
+========================== */
+
+function submitExam() {
+
+    const ok = confirm(
+        "Bạn có chắc muốn nộp bài không?"
+    );
+
+    if (ok) {
+
+        window.location.href =
+            "/tokutei1/exam/{{ exam.id }}/result/";
+    }
+}
+
+</script>
+
+</body>
+</html>
+
+<style>
+.question ruby {
+    ruby-position: over;
+    ruby-align: center;
+}
+
+.question rt {
+    font-size: 0.55em;
+    font-weight: normal;
+    line-height: 1;
+    color: #555;
+    text-align: center;
+}
+
+.question {
+    line-height: 2.2;
+}
+</style>
