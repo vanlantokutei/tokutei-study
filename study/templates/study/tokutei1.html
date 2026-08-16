@@ -2,87 +2,34 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tokutei Study - 外食業 1号</title>
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background: #f4f7fb;
-            color: #222;
-        }
-
-        .header {
-            background: #2563eb;
-            color: white;
-            padding: 35px 20px;
-            text-align: center;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 30px auto;
-            padding: 20px;
-       }
-
-        .card {
-            background: white;
-            padding: 25px;
-            margin-bottom: 20px;
-            border-radius: 16px;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
-        }
-
-        .button {
-            display: inline-block;
-            background: #2563eb;
-            color: white;
-            padding: 12px 20px;
-            border-radius: 10px;
-            text-decoration: none;
-            margin-top: 10px;
-        }
-    </style>
-  <link rel="stylesheet" href="{% static 'study/seasonal-theme.css' %}">
-  <script defer src="{% static 'study/seasonal-theme.js' %}"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>外食業・特定技能1号 | Ôn Thi Tokutei</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:#f5f7fb;color:#172033} a{text-decoration:none;color:inherit}
+.topbar{height:64px;background:#fff;border-bottom:1px solid #e7ebf1;display:flex;align-items:center;justify-content:space-between;padding:0 5%;position:sticky;top:0;z-index:10}.brand{font-weight:900;font-size:20px}.back{font-weight:800;color:#2563eb}
+.hero{background:linear-gradient(135deg,#fff7ed,#fff,#eff6ff);padding:48px 20px 38px;text-align:center;border-bottom:1px solid #e8edf4}.hero-icon{font-size:54px}.eyebrow{display:inline-block;margin:10px 0 8px;padding:6px 12px;border-radius:999px;background:#fff0db;color:#a85609;font-weight:800;font-size:13px}.hero h1{margin:5px 0;font-size:34px}.hero p{margin:8px auto 0;color:#64748b;max-width:650px;line-height:1.6}
+.wrap{max-width:1050px;margin:0 auto;padding:30px 20px 70px}.section-title{margin:0 0 6px;font-size:23px}.section-sub{margin:0 0 20px;color:#64748b}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:#fff;border:1px solid #e8edf4;border-radius:18px;padding:22px;min-height:165px;box-shadow:0 7px 22px rgba(15,23,42,.055);transition:.2s}.card:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(15,23,42,.1);border-color:#bfd3ff}.icon{width:50px;height:50px;border-radius:14px;background:#f1f5ff;display:flex;align-items:center;justify-content:center;font-size:27px}.card h3{margin:15px 0 7px;font-size:18px}.card p{margin:0;color:#64748b;line-height:1.5;font-size:14px}.go{display:inline-block;margin-top:14px;color:#2563eb;font-weight:800;font-size:14px}.premium{margin-top:26px;background:linear-gradient(135deg,#fff8e7,#fff0f6);border:1px solid #f2d27d;border-radius:20px;padding:22px;display:flex;align-items:center;justify-content:space-between;gap:18px}.premium h3{margin:0 0 5px}.premium p{margin:0;color:#6b7280}.premium-btn{background:#172554;color:#fff;padding:12px 17px;border-radius:11px;font-weight:850;white-space:nowrap}
+@media(max-width:760px){.topbar{padding:0 16px}.brand{font-size:17px}.hero{padding:34px 16px 28px}.hero h1{font-size:27px}.grid{grid-template-columns:1fr 1fr;gap:12px}.wrap{padding:24px 14px 55px}.card{padding:17px;min-height:160px}.premium{align-items:flex-start;flex-direction:column}.premium-btn{width:100%;text-align:center}}
+@media(max-width:430px){.grid{grid-template-columns:1fr 1fr}.card h3{font-size:16px}.card p{font-size:13px}.hero-icon{font-size:46px}}
+</style>
+<link rel="stylesheet" href="{% static 'study/seasonal-theme.css' %}">
+<script defer src="{% static 'study/seasonal-theme.js' %}"></script>
 </head>
-
 <body>
-
-<div class="header">
-    <h1>特定技能1号・外食業</h1>
-    <p>Luyện thi Tokutei Ginou 1 - Ngành nhà hàng</p>
+<header class="topbar"><a class="brand" href="/">🇯🇵 ÔN THI TOKUTEI</a><a class="back" href="/">← Trang chủ</a></header>
+<section class="hero"><div class="hero-icon">🍜</div><div class="eyebrow">外食業 • NGÀNH NHÀ HÀNG</div><h1>特定技能 1号</h1><p>Học theo từng phần, luyện câu hỏi và thi thử. Nội dung Nhật – Việt giúp bạn dễ học và dễ ôn lại.</p></section>
+<main class="wrap"><h2 class="section-title">Bạn muốn học gì hôm nay?</h2><p class="section-sub">Chọn một phần để bắt đầu.</p>
+<div class="grid">
+<a class="card" href="/tokutei1/vocabulary/"><div class="icon">🈶</div><h3>Từ vựng</h3><p>Từ vựng chuyên ngành 外食業, nghĩa tiếng Việt và cách dùng.</p><span class="go">Học từ vựng →</span></a>
+<a class="card" href="/tokutei1/library/"><div class="icon">📚</div><h3>Tài liệu</h3><p>Kiến thức và giáo trình được chia theo từng chủ đề.</p><span class="go">Mở tài liệu →</span></a>
+<a class="card" href="/tokutei1/practice/"><div class="icon">📝</div><h3>Luyện thi</h3><p>Luyện câu hỏi theo từng phần trước khi làm đề hoàn chỉnh.</p><span class="go">Luyện ngay →</span></a>
+<a class="card" href="/tokutei1/situations/"><div class="icon">💬</div><h3>Đối ứng</h3><p>Tình huống thực tế trong nhà hàng và cách xử lý bằng tiếng Nhật.</p><span class="go">Học tình huống →</span></a>
+<a class="card" href="/tokutei1/exams/"><div class="icon">🎯</div><h3>Thi thử</h3><p>Làm đề mô phỏng, chấm điểm và kiểm tra năng lực.</p><span class="go">Chọn đề thi →</span></a>
+<a class="card" href="/tokutei1/exams/"><div class="icon">❌</div><h3>Ôn câu sai</h3><p>Xem lại những câu chưa đúng và luyện lại phần còn yếu.</p><span class="go">Ôn lại →</span></a>
 </div>
-
-<div class="container">
-
-    <div class="card">
-        <h2>📚 Học theo chủ đề</h2>
-        <p>Học kiến thức bằng tiếng Nhật và tiếng Việt.</p>
-        <a class="button" href="{% url 'library' %}">Bắt đầu học</a>
-    </div>
-
-    <div class="card">
-        <h2>📝 Luyện câu hỏi</h2>
-        <p>Luyện câu hỏi theo từng chủ đề của kỳ thi.</p>
-        <a class="button" href="/tokutei1/practice/">Luyện ngay</a>
-    </div>
-
-    <div class="card">
-        <h2>⏱ Thi thử</h2>
-        <p>Làm bài thi mô phỏng và tự động tính điểm.</p>
-        <a class="button" href="#">Bắt đầu thi</a>
-    </div>
-
-    <div class="card">
-        <h2>📖 Tài liệu</h2>
-        <p>Tài liệu học 外食業 bằng tiếng Nhật và tiếng Việt.</p>
-        <a class="button" href="{% url 'library' %}">Xem tài liệu</a>
-    </div>
-
-</div>
-
+{% if not has_premium %}<section class="premium"><div><h3>👑 Premium</h3><p>Mở khóa toàn bộ nội dung Premium và bộ đề nâng cao.</p></div><a class="premium-btn" href="/premium/">Xem Premium</a></section>{% endif %}
+</main>
 </body>
 </html>
