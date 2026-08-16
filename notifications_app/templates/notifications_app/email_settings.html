@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cài đặt thông báo email</title>
+<style>
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:#f7f8fc;margin:0;color:#172033}.wrap{max-width:680px;margin:38px auto;padding:0 18px}.box{background:#fff;border-radius:18px;padding:24px;box-shadow:0 8px 28px rgba(0,0,0,.08)}h1{margin-top:0}.switch-row{display:flex;gap:14px;align-items:flex-start;padding:18px;border:1px solid #e2e8f0;border-radius:14px;background:#fafcff}.switch-row input{width:22px;height:22px;margin-top:2px}.switch-title{font-weight:800;font-size:17px}.switch-help{color:#64748b;margin-top:5px;line-height:1.5}.btn{display:inline-block;margin-top:18px;background:#c93669;color:#fff;border:0;border-radius:10px;padding:13px 18px;font-weight:800;cursor:pointer}.saved{background:#e7f8ed;color:#126b35;padding:12px 14px;border-radius:10px;margin-bottom:16px}.back{display:inline-block;margin-bottom:14px;color:#475569;text-decoration:none}
+</style>
+<link rel="stylesheet" href="{% static 'study/seasonal-theme.css' %}">
+</head>
+<body>
+<main class="wrap">
+<a class="back" href="/">← Về trang chủ</a>
+<div class="box">
+<h1>📧 Thông báo qua email</h1>
+<p>Email tài khoản: <strong>{{ request.user.email }}</strong></p>
+{% if saved %}<div class="saved">Đã lưu cài đặt của bạn.</div>{% endif %}
+<form method="post">
+{% csrf_token %}
+<label class="switch-row">
+<input type="checkbox" name="receive_email"{% if preference.receive_email %} checked{% endif %}>
+<span>
+<span class="switch-title">Nhận thông báo qua email</span>
+<div class="switch-help">Nhận email khi Tokutei Study có đề mới, tài liệu mới, tính năng quan trọng hoặc thông báo dành cho tài khoản của bạn. Bạn có thể tắt bất cứ lúc nào.</div>
+</span>
+</label>
+<button class="btn" type="submit">Lưu cài đặt</button>
+</form>
+</div>
+</main>
+</body>
+</html>
