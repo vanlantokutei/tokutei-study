@@ -80,5 +80,13 @@
         <p class="back"><a href="/">← Về trang chủ</a></p>
         <p class="back">Chưa có tài khoản? <a href="{% url 'register' %}">Đăng ký miễn phí</a></p>
     </main>
+
+<style>
+.password-eye-wrap{position:relative;display:block}.password-eye-wrap input{padding-right:46px!important;box-sizing:border-box;width:100%}.password-eye-button{position:absolute;right:8px;top:50%;transform:translateY(-50%);border:0;background:transparent;cursor:pointer;font-size:20px;padding:4px}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('input[type="password"]').forEach(function(i){if(i.dataset.eyeReady)return;i.dataset.eyeReady='1';var w=document.createElement('span');w.className='password-eye-wrap';i.parentNode.insertBefore(w,i);w.appendChild(i);var b=document.createElement('button');b.type='button';b.className='password-eye-button';b.textContent='👁';b.setAttribute('aria-label','Hiện mật khẩu');b.onclick=function(){var s=i.type==='text';i.type=s?'password':'text';b.textContent=s?'👁':'🙈';b.setAttribute('aria-label',s?'Hiện mật khẩu':'Ẩn mật khẩu')};w.appendChild(b)})});
+</script>
+
 </body>
 </html>
