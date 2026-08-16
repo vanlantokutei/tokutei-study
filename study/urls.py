@@ -2,6 +2,7 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
+    path('accounts/register/', views.register, name='register'),
     path(
         'tokutei1/exam/<int:exam_id>/retry-wrong/<int:index>/',
         views.retry_wrong,

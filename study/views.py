@@ -1,4 +1,6 @@
 from django.http import JsonResponse
+from django.contrib.auth import login
+from django.contrib.auth.forms import UserCreationForm
 from django.db.models import Q
 from django.shortcuts import get_object_or_404, redirect, render
 from django.views.decorators.http import require_POST
@@ -7,6 +9,22 @@ from .models import Exam, LearningCategory, Lesson, Question, ServiceSituation, 
 
 def home(request):
     return render(request, 'study/home.html')
+
+
+def register(request):
+    if request.user.is_authenticated:
+        return redirect('home')
+
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect('home')
+    else:
+        form = UserCreationForm()
+
+    return render(request, 'registration/register.html', {'form': form})
 
 
 def tokutei1(request):

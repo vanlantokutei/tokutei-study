@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đăng nhập | Tokutei Study</title>
+    <title>Đăng ký | Tokutei Study</title>
     <style>
         * { box-sizing: border-box; }
         body {
@@ -17,15 +17,15 @@
             color: #1f2937;
         }
         .card {
-            width: min(100%, 420px);
+            width: min(100%, 440px);
             padding: 30px;
             border-radius: 18px;
             background: #fff;
             box-shadow: 0 12px 35px rgba(15, 23, 42, .12);
         }
         h1 { margin: 0 0 8px; text-align: center; }
-        .subtitle { margin: 0 0 24px; text-align: center; color: #64748b; }
-        label { display: block; margin: 16px 0 7px; font-weight: 700; }
+        .subtitle { margin: 0 0 20px; text-align: center; color: #64748b; }
+        label { display: block; margin: 15px 0 7px; font-weight: 700; }
         input {
             width: 100%;
             padding: 12px;
@@ -33,52 +33,58 @@
             border-radius: 10px;
             font-size: 16px;
         }
+        .helptext { display: block; margin-top: 5px; color: #64748b; font-size: 13px; }
+        ul.errorlist {
+            margin: 8px 0;
+            padding: 10px 10px 10px 28px;
+            border-radius: 8px;
+            background: #fee2e2;
+            color: #b91c1c;
+            font-size: 14px;
+        }
         button {
             width: 100%;
             margin-top: 22px;
             padding: 13px;
             border: 0;
             border-radius: 10px;
-            background: #2563eb;
+            background: #16a34a;
             color: #fff;
             font-size: 16px;
             font-weight: 700;
             cursor: pointer;
         }
-        .error {
-            padding: 11px;
-            border-radius: 8px;
-            background: #fee2e2;
-            color: #b91c1c;
-        }
-        .back { margin: 22px 0 0; text-align: center; }
+        .back { margin: 20px 0 0; text-align: center; }
         a { color: #2563eb; text-decoration: none; }
     </style>
 </head>
 <body>
     <main class="card">
-        <h1>Đăng nhập</h1>
-        <p class="subtitle">Đăng nhập để tiếp tục học</p>
-
-        {% if form.errors %}
-            <p class="error">Tên đăng nhập hoặc mật khẩu không đúng.</p>
-        {% endif %}
+        <h1>Tạo tài khoản</h1>
+        <p class="subtitle">Đăng ký miễn phí để bắt đầu học</p>
 
         <form method="post">
             {% csrf_token %}
-            {% if next %}<input type="hidden" name="next" value="{{ next }}">{% endif %}
+
+            {{ form.non_field_errors }}
 
             <label for="{{ form.username.id_for_label }}">Tên đăng nhập</label>
             {{ form.username }}
+            {{ form.username.errors }}
 
-            <label for="{{ form.password.id_for_label }}">Mật khẩu</label>
-            {{ form.password }}
+            <label for="{{ form.password1.id_for_label }}">Mật khẩu</label>
+            {{ form.password1 }}
+            {{ form.password1.errors }}
 
-            <button type="submit">Đăng nhập</button>
+            <label for="{{ form.password2.id_for_label }}">Nhập lại mật khẩu</label>
+            {{ form.password2 }}
+            {{ form.password2.errors }}
+
+            <button type="submit">Đăng ký tài khoản</button>
         </form>
 
+        <p class="back">Đã có tài khoản? <a href="{% url 'login' %}">Đăng nhập</a></p>
         <p class="back"><a href="/">← Về trang chủ</a></p>
-        <p class="back">Chưa có tài khoản? <a href="{% url 'register' %}">Đăng ký miễn phí</a></p>
     </main>
 </body>
 </html>

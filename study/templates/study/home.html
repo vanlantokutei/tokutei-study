@@ -137,7 +137,11 @@ header {
 
 <header>
     <div class="logo">🇯🇵 TOKUTEI STUDY 🇻🇳</div>
+{% if user.is_authenticated %}
+<span class="login">Xin chào, {{ user.username }}</span>
+{% else %}
 <a href="/accounts/login/" class="login">Đăng nhập</a>
+{% endif %}
 </header>
 
 <section class="hero">
