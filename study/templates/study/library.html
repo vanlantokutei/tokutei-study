@@ -35,7 +35,7 @@
         .lesson { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 15px 2px; border-bottom: 1px solid #eef2f7; text-decoration: none; }
         .lesson:last-child { border: 0; padding-bottom: 0; }
         .lesson-title strong { display: block; margin-bottom: 4px; }
-        .lesson-title .jp-line { color: #64748b; font-size: 14px; line-height: 2; }
+        .lesson-title .jp-line { color: #64748b; font-size: 14px; line-height: 2.2; }
         .status { font-size: 13px; font-weight: 700; white-space: nowrap; color: #2563eb; }
         .status.done { color: #15803d; }
         .empty { color: #94a3b8; margin: 16px 0 0; }
@@ -76,8 +76,10 @@
                         <div class="jp-line">
                             {% if '<ruby>' in lesson.title_jp %}
                                 {{ lesson.title_jp|safe }}
+                            {% elif lesson.title_furigana %}
+                                <ruby>{{ lesson.title_jp }}<rt>{{ lesson.title_furigana }}</rt></ruby>
                             {% else %}
-                                {{ lesson.title_jp }}{% if lesson.title_furigana %} · {{ lesson.title_furigana }}{% endif %}
+                                {{ lesson.title_jp }}
                             {% endif %}
                         </div>
                     </div>
