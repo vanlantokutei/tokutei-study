@@ -3,3 +3,4 @@ gunicorn
 whitenoise[brotli]
 dj-database-url
 psycopg[binary]
+resend
