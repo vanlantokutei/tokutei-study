@@ -97,10 +97,14 @@ h1 {
 
     <p>{{ exam.description }}</p>
 
-    {% if exam.is_free %}
+    {% if exam.is_free or has_premium %}
         <a class="start"
            href="/tokutei1/exam/{{ exam.id }}/start/">
             Bắt đầu làm bài →
+        </a>
+    {% else %}
+        <a class="start" href="{% url 'premium' %}">
+            🔒 Nâng cấp Premium
         </a>
     {% endif %}
 

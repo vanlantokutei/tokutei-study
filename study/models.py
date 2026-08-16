@@ -1,4 +1,5 @@
 from django.db import models
+from django.conf import settings
 
 
 class Question(models.Model):
@@ -382,3 +383,100 @@ class ServiceSituation(models.Model):
 
     def __str__(self):
         return self.title_vi
+
+
+class PremiumProfile(models.Model):
+    user = models.OneToOneField(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name='premium_profile',
+    )
+    is_premium = models.BooleanField(default=False, verbose_name='Đang Premium')
+    activated_at = models.DateTimeField(null=True, blank=True)
+    expires_at = models.DateTimeField(null=True, blank=True)
+    admin_note = models.TextField(blank=True, default='')
+
+    class Meta:
+        verbose_name = 'Trạng thái Premium'
+        verbose_name_plural = 'Trạng thái Premium'
+
+    def __str__(self):
+        return f"{self.user.username} - {'Premium' if self.is_premium else 'Free'}"
+
+
+class PremiumPlan(models.Model):
+    name = models.CharField(max_length=80, verbose_name='Tên gói')
+    slug = models.SlugField(unique=True)
+    duration_days = models.PositiveIntegerField(null=True, blank=True, verbose_name='Số ngày sử dụng (để trống = trọn đời)')
+    original_price_vnd = models.PositiveIntegerField(verbose_name='Giá gốc (VNĐ)')
+    sale_price_vnd = models.PositiveIntegerField(verbose_name='Giá ưu đãi (VNĐ)')
+    is_featured = models.BooleanField(default=False, verbose_name='Ưu đãi tốt nhất')
+    is_active = models.BooleanField(default=True, verbose_name='Đang bán')
+    order = models.PositiveIntegerField(default=0)
+
+    class Meta:
+        ordering = ['order', 'id']
+        verbose_name = 'Gói Premium'
+        verbose_name_plural = 'Các gói Premium'
+
+    @property
+    def discount_percent(self):
+        if not self.original_price_vnd:
+            return 0
+        return round((self.original_price_vnd - self.sale_price_vnd) * 100 / self.original_price_vnd)
+
+    @property
+    def original_price_display(self):
+        return f'{self.original_price_vnd:,}'.replace(',', '.')
+
+    @property
+    def sale_price_display(self):
+        return f'{self.sale_price_vnd:,}'.replace(',', '.')
+
+    def __str__(self):
+        return f'{self.name} - {self.sale_price_vnd:,}đ'
+
+
+class PremiumRequest(models.Model):
+    STATUS_CHOICES = [
+        ('pending', 'Chờ duyệt'),
+        ('approved', 'Đã duyệt'),
+        ('rejected', 'Từ chối'),
+    ]
+
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name='premium_requests',
+    )
+    plan = models.ForeignKey(PremiumPlan, on_delete=models.PROTECT, related_name='requests', verbose_name='Gói Premium')
+    transfer_name = models.CharField(max_length=150, verbose_name='Tên người chuyển khoản')
+    transfer_date = models.DateField(verbose_name='Ngày chuyển khoản')
+    amount_vnd = models.PositiveIntegerField(verbose_name='Số tiền (VNĐ)')
+    reference = models.CharField(
+        max_length=200,
+        blank=True,
+        default='',
+        verbose_name='Mã giao dịch/nội dung chuyển khoản',
+    )
+    note = models.TextField(blank=True, default='', verbose_name='Ghi chú')
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='pending')
+    admin_note = models.TextField(blank=True, default='', verbose_name='Ghi chú Admin')
+    reviewed_by = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='reviewed_premium_requests',
+    )
+    reviewed_at = models.DateTimeField(null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ['-created_at']
+        verbose_name = 'Yêu cầu Premium'
+        verbose_name_plural = 'Yêu cầu Premium'
+
+    def __str__(self):
+        return f"{self.user.username} - {self.plan.name} - {self.amount_vnd:,}đ"

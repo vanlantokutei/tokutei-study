@@ -1,14 +1,71 @@
 from django.http import JsonResponse
 from django.contrib.auth import login
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.decorators import login_required
+from django.conf import settings
+from django.core.mail import send_mail
 from django.db.models import Q
 from django.shortcuts import get_object_or_404, redirect, render
 from django.views.decorators.http import require_POST
-from .models import Exam, LearningCategory, Lesson, Question, ServiceSituation, VocabularyEntry
+from .forms import PremiumRequestForm, RegistrationForm
+from .models import (
+    Exam, LearningCategory, Lesson, PremiumPlan, PremiumProfile, PremiumRequest,
+    Question, ServiceSituation, VocabularyEntry,
+)
+
+
+def user_has_premium(user):
+    if not user.is_authenticated:
+        return False
+    return PremiumProfile.objects.filter(user=user, is_premium=True).exists()
 
 
 def home(request):
-    return render(request, 'study/home.html')
+    return render(request, 'study/home.html', {'has_premium': user_has_premium(request.user)})
+
+
+@login_required
+def premium(request):
+    profile, _ = PremiumProfile.objects.get_or_create(user=request.user)
+    latest_request = PremiumRequest.objects.filter(user=request.user).first()
+    plans = PremiumPlan.objects.filter(is_active=True)
+
+    if request.method == 'POST' and not profile.is_premium:
+        form = PremiumRequestForm(request.POST)
+        if form.is_valid():
+            premium_request = form.save(commit=False)
+            premium_request.user = request.user
+            premium_request.amount_vnd = premium_request.plan.sale_price_vnd
+            premium_request.save()
+
+            admin_url = request.build_absolute_uri(
+                f'/admin/study/premiumrequest/{premium_request.id}/change/'
+            )
+            send_mail(
+                subject=f'[Tokutei Study] Yêu cầu Premium từ {request.user.username}',
+                message=(
+                    f'Người dùng: {request.user.username}\n'
+                    f'Tên chuyển khoản: {premium_request.transfer_name}\n'
+                    f'Gói: {premium_request.plan.name}\n'
+                    f'Số tiền: {premium_request.amount_vnd:,}đ\n'
+                    f'Ngày chuyển: {premium_request.transfer_date}\n'
+                    f'Mã giao dịch: {premium_request.reference or "Không có"}\n\n'
+                    f'Mở yêu cầu để duyệt: {admin_url}'
+                ),
+                from_email=settings.DEFAULT_FROM_EMAIL,
+                recipient_list=[settings.ADMIN_NOTIFICATION_EMAIL],
+                fail_silently=True,
+            )
+            return redirect('premium')
+    else:
+        form = PremiumRequestForm()
+
+    return render(request, 'study/premium.html', {
+        'form': form,
+        'profile': profile,
+        'latest_request': latest_request,
+        'plans': plans,
+        'bank_info': settings.PREMIUM_BANK_INFO,
+    })
 
 
 def register(request):
@@ -16,13 +73,13 @@ def register(request):
         return redirect('home')
 
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = RegistrationForm(request.POST)
         if form.is_valid():
             user = form.save()
             login(request, user)
             return redirect('home')
     else:
-        form = UserCreationForm()
+        form = RegistrationForm()
 
     return render(request, 'registration/register.html', {'form': form})
 
@@ -243,7 +300,7 @@ def exam_list(request):
     return render(
         request,
         'study/exam_list.html',
-        {'exams': exams}
+        {'exams': exams, 'has_premium': user_has_premium(request.user)}
     )
 
 
@@ -284,6 +341,8 @@ def take_exam(request, exam_id, question_number=1):
     from .models import ExamQuestion
 
     exam = get_object_or_404(Exam, id=exam_id)
+    if not exam.is_free and not user_has_premium(request.user):
+        return redirect('premium')
 
     order_key = f"exam_{exam.id}_order"
     option_key = f"exam_{exam.id}_option_maps"
@@ -410,6 +469,8 @@ def start_exam(request, exam_id):
     from django.shortcuts import get_object_or_404, redirect
 
     exam = get_object_or_404(Exam, id=exam_id)
+    if not exam.is_free and not user_has_premium(request.user):
+        return redirect('premium')
 
     # Mỗi lần bấm bắt đầu/làm lại:
     # xáo câu và xáo A/B/C hoàn toàn mới
@@ -426,6 +487,8 @@ def exam_intro(request, exam_id):
     from .models import ExamQuestion
 
     exam = get_object_or_404(Exam, id=exam_id)
+    if not exam.is_free and not user_has_premium(request.user):
+        return redirect('premium')
 
     total = ExamQuestion.objects.filter(exam=exam).count()
 

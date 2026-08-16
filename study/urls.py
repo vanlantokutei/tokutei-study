@@ -3,6 +3,7 @@ from . import views
 
 urlpatterns = [
     path('accounts/register/', views.register, name='register'),
+    path('premium/', views.premium, name='premium'),
     path(
         'tokutei1/exam/<int:exam_id>/retry-wrong/<int:index>/',
         views.retry_wrong,

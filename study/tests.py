@@ -1,4 +1,50 @@
 from django.test import TestCase
+from django.contrib.auth import get_user_model
+from django.urls import reverse
+
+from .models import Exam, PremiumPlan, PremiumProfile, PremiumRequest
+
+
+class PremiumFlowTests(TestCase):
+    def setUp(self):
+        self.user = get_user_model().objects.create_user(
+            username='premium-test', email='premium@example.com', password='Test-pass-123!'
+        )
+        self.exam = Exam.objects.create(title='Đề Premium', is_free=False)
+        self.plan = PremiumPlan.objects.create(
+            name='1 tháng', slug='test-1-thang', duration_days=30,
+            original_price_vnd=59000, sale_price_vnd=29000,
+        )
+
+    def test_premium_exam_redirects_free_user(self):
+        self.client.force_login(self.user)
+        response = self.client.get(reverse('exam_intro', args=[self.exam.id]))
+        self.assertRedirects(response, reverse('premium'))
+
+    def test_premium_user_can_open_premium_exam(self):
+        PremiumProfile.objects.create(user=self.user, is_premium=True)
+        self.client.force_login(self.user)
+        response = self.client.get(reverse('exam_intro', args=[self.exam.id]))
+        self.assertEqual(response.status_code, 200)
+
+    def test_user_can_submit_transfer_request(self):
+        self.client.force_login(self.user)
+        response = self.client.post(reverse('premium'), {
+            'plan': self.plan.id,
+            'transfer_name': 'Nguyen Van A',
+            'transfer_date': '2026-08-16',
+            'reference': 'TOKUTEI123',
+            'note': '',
+        })
+        self.assertRedirects(response, reverse('premium'))
+        self.assertTrue(PremiumRequest.objects.filter(user=self.user, status='pending').exists())
+
+    def test_premium_page_displays_sale_prices_and_discount(self):
+        self.client.force_login(self.user)
+        response = self.client.get(reverse('premium'))
+        self.assertContains(response, '59.000đ')
+        self.assertContains(response, '29.000')
+        self.assertContains(response, 'Giảm 51%')
 from django.urls import reverse
 
 from .models import LearningCategory, Lesson, QuickQuestion, ServiceSituation, VocabularyEntry

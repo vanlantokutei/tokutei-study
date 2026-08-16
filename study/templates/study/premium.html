@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nâng cấp Premium</title>
+<style>
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:#f7f8fc;margin:0;color:#172033}.wrap{max-width:920px;margin:35px auto;padding:0 18px}.box{background:#fff;border-radius:18px;padding:24px;box-shadow:0 8px 28px rgba(0,0,0,.08);margin-bottom:18px}h1{margin-top:0}.plans{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:18px 0}.plan{position:relative;display:block!important;margin:0!important;padding:18px;border:2px solid #e2e8f0;border-radius:16px;cursor:pointer;background:#fff}.plan:has(input:checked){border-color:#c93669;background:#fff5f8;box-shadow:0 0 0 3px rgba(201,54,105,.12)}.plan.featured{border-color:#e9a62e}.badge{display:inline-block;background:#c93669;color:#fff;border-radius:999px;padding:4px 9px;font-size:12px;font-weight:800;margin-bottom:8px}.best{background:#e9a62e;color:#392500}.plan-name{font-size:20px;font-weight:800}.old-price{color:#7b8494;text-decoration:line-through;margin-top:8px}.sale-price{font-size:30px;font-weight:900;color:#c93669}.sale-price small{font-size:15px}.plan input{width:auto;margin-right:7px}.bank{white-space:pre-wrap;background:#fff7e8;border:1px solid #f0cf92;border-radius:12px;padding:16px}label{display:block;font-weight:700;margin:14px 0 6px}input,textarea{width:100%;padding:12px;border:1px solid #ccd3df;border-radius:10px;font:inherit;box-sizing:border-box}.btn{display:inline-block;background:#c93669;color:#fff;border:0;border-radius:10px;padding:13px 18px;font-weight:800;cursor:pointer}.status{padding:14px;border-radius:10px;background:#eef4ff}.ok{background:#e7f8ed;color:#126b35}.back{color:#475569;text-decoration:none}@media(max-width:640px){.plans{grid-template-columns:1fr}.wrap{margin-top:20px}.box{padding:18px}.sale-price{font-size:27px}}</style>
+<link rel="stylesheet" href="{% static 'study/seasonal-theme.css' %}">
+<script defer src="{% static 'study/seasonal-theme.js' %}"></script>
+</head>
+<body><main class="wrap">
+<a class="back" href="/">← Về trang chủ</a>
+<div class="box">
+  <h1>👑 Tokutei Study Premium</h1>
+  {% if profile.is_premium %}
+    <div class="status ok"><strong>Tài khoản của bạn đang là Premium.</strong></div>
+  {% else %}
+    <p>Mở khóa toàn bộ bộ đề được đánh dấu Premium.</p>
+  {% endif %}
+</div>
+
+{% if not profile.is_premium %}
+<div class="box">
+  <h2>Thông tin chuyển khoản</h2>
+  <div class="bank">{{ bank_info }}</div>
+</div>
+
+{% if latest_request %}
+<div class="box status">
+  <strong>Yêu cầu gần nhất:</strong> {{ latest_request.get_status_display }}<br>
+  Gửi lúc {{ latest_request.created_at|date:"d/m/Y H:i" }}
+</div>
+{% endif %}
+
+<div class="box">
+  <h2>Báo đã chuyển khoản</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.non_field_errors }}
+    <h2>Chọn gói ưu đãi</h2>
+    <div class="plans">
+      {% for plan in plans %}
+      <label class="plan{% if plan.is_featured %} featured{% endif %}">
+        {% if plan.is_featured %}<span class="badge best">⭐ Ưu đãi tốt nhất</span><br>{% endif %}
+        <span class="badge">Giảm {{ plan.discount_percent }}%</span>
+        <div class="plan-name"><input type="radio" name="plan" value="{{ plan.id }}" required{% if forloop.first %} checked{% endif %}>{{ plan.name }}</div>
+        <div class="old-price">Giá gốc: {{ plan.original_price_display }}đ</div>
+        <div class="sale-price">{{ plan.sale_price_display }}<small>đ</small></div>
+      </label>
+      {% endfor %}
+    </div>
+    {% for error in form.plan.errors %}<div style="color:#b91c1c">{{ error }}</div>{% endfor %}
+    {% for field in form %}
+      {% if field.name != 'plan' %}
+      <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+      {{ field }}
+      {% for error in field.errors %}<div style="color:#b91c1c">{{ error }}</div>{% endfor %}
+      {% endif %}
+    {% endfor %}
+    <p><button class="btn" type="submit">Gửi yêu cầu duyệt Premium</button></p>
+  </form>
+</div>
+{% endif %}
+</main></body>
+</html>

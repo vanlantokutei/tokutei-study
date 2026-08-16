@@ -141,7 +141,7 @@ header {
 <header>
     <div class="logo">🇯🇵 TOKUTEI STUDY 🇻🇳</div>
 {% if user.is_authenticated %}
-<span class="login">Xin chào, {{ user.username }}</span>
+<span class="login">Xin chào, {{ user.username }}{% if has_premium %} • ⭐ Premium{% endif %}</span>
 {% else %}
 <a href="/accounts/login/" class="login">Đăng nhập</a>
 {% endif %}
@@ -219,6 +219,12 @@ header {
         <p>Theo dõi điểm và tỷ lệ trả lời đúng.</p>
     </div>
 
+    <div class="card">
+        <div class="icon">👑</div>
+        <h3>Premium</h3>
+        <p>{% if has_premium %}Tài khoản của bạn đang là Premium.{% else %}Mở khóa toàn bộ bộ đề Premium.{% endif %}</p>
+    </div>
+
 </section>
 
 
@@ -279,6 +285,12 @@ document.addEventListener("DOMContentLoaded", function () {
         else if (name === "Tình huống ngành dịch vụ") {
             card.onclick = function () {
                 window.location.href = "/tokutei1/situations/";
+            };
+        }
+
+        else if (name === "Premium") {
+            card.onclick = function () {
+                window.location.href = "/premium/";
             };
         }
 
