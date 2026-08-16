@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -15,6 +16,8 @@
         .complete { width:100%; border:0; border-radius:12px; padding:14px; font-size:16px; font-weight:800; cursor:pointer; background:#2563eb; color:white; } .complete.done { background:#16a34a; }
         .source { font-size:14px; color:#64748b; } .source a { color:#2563eb; }
     </style>
+  <link rel="stylesheet" href="{% static 'study/seasonal-theme.css' %}">
+  <script defer src="{% static 'study/seasonal-theme.js' %}"></script>
 </head>
 <body>
 <header class="top"><div class="top-inner"><a class="back" href="{% url 'library' %}">← Kho tài liệu</a></div></header>

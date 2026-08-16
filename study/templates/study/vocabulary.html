@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -12,6 +13,8 @@
         .summary{color:#64748b;margin:0 0 15px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.word{background:white;border-radius:17px;padding:21px;box-shadow:0 4px 15px rgba(0,0,0,.05);position:relative}.word.done{border:2px solid #86efac}.tag{display:inline-block;background:#f3e8ff;color:#6b21a8;border-radius:99px;padding:5px 9px;font-size:12px;font-weight:800}.word h2{font-size:27px;margin:13px 0 0}.reading{color:#7c3aed;font-weight:700;margin:0 0 8px}.meaning{font-size:18px;font-weight:800;margin:6px 0 15px}.example{background:#f8fafc;border-radius:10px;padding:12px;margin-top:10px}.example p{margin:3px 0}.example .vi{color:#64748b}.note{color:#b45309;font-size:14px}.learn-form{margin-top:14px}.learn{width:100%;border:1px solid #7c3aed;color:#6d28d9;background:white;padding:10px;border-radius:10px;font-weight:800;cursor:pointer}.done .learn{border-color:#16a34a;background:#dcfce7;color:#15803d}.empty{text-align:center;background:white;border-radius:18px;padding:45px;color:#64748b}
         @media(max-width:700px){.grid{grid-template-columns:1fr}.tools{grid-template-columns:1fr}.clear{justify-content:center;padding:11px}.progress-top{font-size:14px}}
     </style>
+  <link rel="stylesheet" href="{% static 'study/seasonal-theme.css' %}">
+  <script defer src="{% static 'study/seasonal-theme.js' %}"></script>
 </head>
 <body>
 <header class="header"><div class="inner"><a class="back" href="{% url 'library' %}">← Kho tài liệu</a><h1>🗂️ Kho từ vựng</h1><p>特定技能1号・外食業 — Nhật · Furigana · Việt</p></div></header>

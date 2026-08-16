@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -38,6 +39,8 @@
         .empty { color: #94a3b8; margin: 16px 0 0; }
         @media (max-width: 650px) { .group-head { display: block; } .count { display: inline-block; margin: 12px 0 0 48px; } }
     </style>
+  <link rel="stylesheet" href="{% static 'study/seasonal-theme.css' %}">
+  <script defer src="{% static 'study/seasonal-theme.js' %}"></script>
 </head>
 <body>
 <header class="header">
