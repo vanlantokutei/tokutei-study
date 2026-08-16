@@ -20,3 +20,66 @@ input:focus,select:focus,textarea:focus{border-color:var(--season-primary)!impor
 @keyframes seasonFall{0%{transform:translate3d(0,-12vh,0) rotate(0)}100%{transform:translate3d(70px,116vh,0) rotate(360deg)}}
 @media(max-width:720px){body{padding-bottom:max(10px,env(safe-area-inset-bottom))}.card,.panel,.quiz-card,.lesson-card,main>section,form{border-radius:16px}.seasonal-float:nth-child(n+9){display:none}}
 @media(prefers-reduced-motion:reduce){.seasonal-float{display:none}*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+
+
+/* JAPANESE_STYLE_V2_START */
+:root{
+  --jp-indigo:#17324d;
+  --jp-vermilion:#c53b2c;
+  --jp-gold:#c79a3b;
+  --jp-ink:#232323;
+  --jp-paper:#fffdf7;
+}
+html,body{font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",YuGothic,"Noto Sans JP",system-ui,sans-serif}
+body{
+  color:var(--jp-ink);
+  background-color:var(--jp-paper);
+  background-image:
+    linear-gradient(rgba(255,255,255,.76),rgba(255,255,255,.76)),
+    repeating-linear-gradient(0deg,rgba(83,66,45,.025) 0,rgba(83,66,45,.025) 1px,transparent 1px,transparent 5px),
+    repeating-linear-gradient(90deg,rgba(83,66,45,.018) 0,rgba(83,66,45,.018) 1px,transparent 1px,transparent 7px),
+    radial-gradient(circle at top left,var(--season-secondary),transparent 42%);
+}
+body:after{
+  content:"";position:fixed;right:-45px;top:72px;width:190px;height:190px;z-index:-1;opacity:.055;pointer-events:none;
+  background:repeating-radial-gradient(circle at 0 100%,transparent 0 12px,var(--jp-indigo) 13px 14px,transparent 15px 25px);
+  transform:rotate(-12deg);
+}
+header,nav,.navbar,.topbar{
+  background:linear-gradient(115deg,var(--jp-indigo) 0%,#244d70 58%,var(--season-accent) 100%)!important;
+  border-bottom:3px solid var(--jp-gold)!important;
+  letter-spacing:.035em;
+}
+h1,h2,h3{font-weight:750;letter-spacing:.035em;color:var(--jp-indigo);line-height:1.35}
+h1:after,h2:after{content:"";display:block;width:52px;height:3px;margin-top:9px;border-radius:3px;background:linear-gradient(90deg,var(--jp-vermilion),var(--jp-gold))}
+.card,.panel,.quiz-card,.lesson-card,main>section,form{
+  position:relative;
+  background:rgba(255,253,247,.94)!important;
+  border:1px solid rgba(23,50,77,.13)!important;
+  border-top:3px solid var(--season-primary)!important;
+  box-shadow:0 12px 32px rgba(23,50,77,.10)!important;
+}
+.card:before,.panel:before,.quiz-card:before,.lesson-card:before{
+  content:"";position:absolute;right:10px;top:9px;width:18px;height:18px;opacity:.13;border:2px solid var(--jp-vermilion);transform:rotate(45deg);pointer-events:none
+}
+button,.btn,input[type="submit"],.button{
+  min-height:42px;font-weight:700;letter-spacing:.025em;border-radius:9px!important
+}
+.btn-primary,button[type="submit"],input[type="submit"],.button.default{
+  background:linear-gradient(135deg,var(--jp-vermilion),#9f2e24)!important;
+  box-shadow:0 6px 16px rgba(197,59,44,.22)!important
+}
+.btn-secondary,.button:not(.default){background:#fff!important;color:var(--jp-indigo)!important;border:1px solid rgba(23,50,77,.22)!important}
+input,select,textarea{background:#fffefa!important;border-radius:8px!important;min-height:42px}
+a{font-weight:600;text-decoration-color:color-mix(in srgb,var(--season-primary) 55%,transparent);text-underline-offset:3px}
+table{border-collapse:separate;border-spacing:0;overflow:hidden;border-radius:12px;border:1px solid rgba(23,50,77,.12);background:#fff}
+th{background:var(--jp-indigo)!important;color:#fff!important;letter-spacing:.03em}
+tr:nth-child(even) td{background:rgba(23,50,77,.025)}
+.progress,.progress-bar{border-radius:999px}.progress-bar{background:linear-gradient(90deg,var(--season-primary),var(--jp-gold))!important}
+@media(max-width:720px){
+  body{font-size:15px}h1{font-size:1.65rem}h2{font-size:1.32rem}
+  header,nav,.navbar,.topbar{border-bottom-width:2px!important}
+  .card,.panel,.quiz-card,.lesson-card,main>section,form{box-shadow:0 8px 22px rgba(23,50,77,.09)!important}
+}
+/* JAPANESE_STYLE_V2_END */
+
