@@ -2,11 +2,17 @@ from django import forms
 from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import UserCreationForm
 
+from notifications_app.models import UserNotificationPreference
 from .models import PremiumPlan, PremiumRequest
 
 
 class RegistrationForm(UserCreationForm):
     email = forms.EmailField(required=True, label='Email')
+    receive_email = forms.BooleanField(
+        required=False,
+        initial=True,
+        label='Nhận thông báo qua email',
+    )
 
     class Meta(UserCreationForm.Meta):
         model = get_user_model()
@@ -17,6 +23,17 @@ class RegistrationForm(UserCreationForm):
         if get_user_model().objects.filter(email__iexact=email).exists():
             raise forms.ValidationError('Email này đã được sử dụng.')
         return email
+
+    def save(self, commit=True):
+        user = super().save(commit=commit)
+        if commit:
+            UserNotificationPreference.objects.update_or_create(
+                user=user,
+                defaults={
+                    'receive_email': self.cleaned_data.get('receive_email', True),
+                },
+            )
+        return user
 
 
 class PremiumRequestForm(forms.ModelForm):
