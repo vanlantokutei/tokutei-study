@@ -65,6 +65,54 @@ header {
     margin-bottom: 15px;
 }
 
+.premium-slider {
+    max-width: 850px;
+    margin: 0 auto 34px;
+    padding: 0 20px;
+}
+
+.premium-window {
+    position: relative;
+    overflow: hidden;
+    min-height: 215px;
+    border-radius: 22px;
+    background: linear-gradient(135deg, #fff8e8, #fff0f6 55%, #f2eaff);
+    border: 1px solid #f1c96d;
+    box-shadow: 0 12px 34px rgba(122, 61, 24, .13);
+}
+
+.premium-slide {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 22px;
+    padding: 30px 34px 42px;
+    opacity: 0;
+    transform: translateX(35px);
+    pointer-events: none;
+    transition: opacity .55s ease, transform .55s ease;
+}
+
+.premium-slide.active {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+}
+
+.premium-kicker { color: #9a5b14; font-weight: 800; margin-bottom: 7px; }
+.premium-title { font-size: 28px; font-weight: 900; margin-bottom: 8px; }
+.discount { display: inline-block; padding: 5px 10px; border-radius: 999px; background: #dc285f; color: #fff; font-weight: 900; }
+.best-deal { background: #e7a51d; color: #3f2a00; margin-left: 5px; }
+.price-old { color: #7c8491; text-decoration: line-through; margin-bottom: 3px; }
+.price-new { color: #c51f54; font-size: 34px; line-height: 1; font-weight: 950; }
+.premium-button { display: inline-block; white-space: nowrap; text-decoration: none; background: #183153; color: #fff; padding: 14px 20px; border-radius: 12px; font-weight: 900; box-shadow: 0 7px 16px rgba(24,49,83,.2); }
+.premium-button:hover { background: #c51f54; }
+.premium-dots { position: absolute; left: 0; right: 0; bottom: 15px; display: flex; justify-content: center; gap: 8px; z-index: 5; }
+.premium-dot { width: 9px; height: 9px; padding: 0; border: 0; border-radius: 50%; background: #c9b9bd; cursor: pointer; }
+.premium-dot.active { width: 25px; border-radius: 8px; background: #c51f54; }
+
 .levels {
     max-width: 850px;
     margin: 20px auto 35px;
@@ -129,6 +177,12 @@ header {
     .hero h1 {
         font-size: 32px;
     }
+
+    .premium-window { min-height: 300px; }
+    .premium-slide { grid-template-columns: 1fr; text-align: center; padding: 25px 20px 48px; gap: 16px; }
+    .premium-title { font-size: 24px; }
+    .price-new { font-size: 31px; }
+    .premium-button { width: 100%; }
 }
 </style>
 
@@ -158,6 +212,32 @@ header {
     </p>
 
 </section>
+
+{% if not has_premium %}
+<section class="premium-slider" aria-label="Ưu đãi Premium">
+    <div class="premium-window" id="premiumSlider">
+        <article class="premium-slide active">
+            <div><div class="premium-kicker">👑 PREMIUM TOKUTEI</div><div class="premium-title">Gói 1 tháng <span class="discount">Giảm 51%</span></div><div class="price-old">59.000đ</div><div class="price-new">29.000đ</div></div>
+            <a class="premium-button" href="/premium/">Xem ưu đãi →</a>
+        </article>
+        <article class="premium-slide">
+            <div><div class="premium-kicker">👑 PREMIUM TOKUTEI</div><div class="premium-title">Gói 6 tháng <span class="discount">Giảm 64%</span></div><div class="price-old">354.000đ</div><div class="price-new">129.000đ</div></div>
+            <a class="premium-button" href="/premium/">Xem ưu đãi →</a>
+        </article>
+        <article class="premium-slide">
+            <div><div class="premium-kicker">👑 PREMIUM TOKUTEI</div><div class="premium-title">Gói 1 năm <span class="discount">Giảm 72%</span><span class="discount best-deal">Tốt nhất</span></div><div class="price-old">708.000đ</div><div class="price-new">199.000đ</div></div>
+            <a class="premium-button" href="/premium/">Xem ưu đãi →</a>
+        </article>
+        <article class="premium-slide">
+            <div><div class="premium-kicker">👑 PREMIUM TOKUTEI</div><div class="premium-title">Gói trọn đời <span class="discount">Giảm 70%</span></div><div class="price-old">999.000đ</div><div class="price-new">299.000đ</div></div>
+            <a class="premium-button" href="/premium/">Xem ưu đãi →</a>
+        </article>
+        <div class="premium-dots" aria-label="Chọn gói">
+            <button class="premium-dot active" type="button" aria-label="Gói 1 tháng"></button><button class="premium-dot" type="button" aria-label="Gói 6 tháng"></button><button class="premium-dot" type="button" aria-label="Gói 1 năm"></button><button class="premium-dot" type="button" aria-label="Gói trọn đời"></button>
+        </div>
+    </div>
+</section>
+{% endif %}
 
 <section class="levels">
 
@@ -230,6 +310,31 @@ header {
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
+
+    // Banner Premium tự động chuyển mỗi 4 giây.
+    const slider = document.getElementById("premiumSlider");
+    if (slider) {
+        const slides = slider.querySelectorAll(".premium-slide");
+        const dots = slider.querySelectorAll(".premium-dot");
+        let current = 0;
+        let timer;
+
+        function showSlide(index) {
+            current = (index + slides.length) % slides.length;
+            slides.forEach((slide, i) => slide.classList.toggle("active", i === current));
+            dots.forEach((dot, i) => dot.classList.toggle("active", i === current));
+        }
+
+        function startSlider() {
+            clearInterval(timer);
+            timer = setInterval(() => showSlide(current + 1), 4000);
+        }
+
+        dots.forEach((dot, i) => dot.addEventListener("click", function () { showSlide(i); startSlider(); }));
+        slider.addEventListener("mouseenter", () => clearInterval(timer));
+        slider.addEventListener("mouseleave", startSlider);
+        startSlider();
+    }
 
     // ===== TOKUTEI 1 / 2 =====
     const levels = document.querySelectorAll(".level");
