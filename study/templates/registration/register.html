@@ -34,6 +34,7 @@
             border-radius: 10px;
             font-size: 16px;
         }
+        .notify-row{display:flex;gap:10px;align-items:flex-start;margin-top:16px;padding:12px;border:1px solid #e2e8f0;border-radius:10px;background:#f8fafc}.notify-row input{width:18px;height:18px;margin-top:2px}.notify-row label{margin:0;font-weight:700}.notify-help{font-size:12px;color:#64748b;margin-top:4px;line-height:1.4}
         .helptext { display: block; margin-top: 5px; color: #64748b; font-size: 13px; }
         ul.errorlist {
             margin: 8px 0;
@@ -75,6 +76,10 @@
             {{ form.username }}
             {{ form.username.errors }}
 
+            <label for="{{ form.email.id_for_label }}">Email</label>
+            {{ form.email }}
+            {{ form.email.errors }}
+
             <label for="{{ form.password1.id_for_label }}">Mật khẩu</label>
             {{ form.password1 }}
             {{ form.password1.errors }}
@@ -82,6 +87,15 @@
             <label for="{{ form.password2.id_for_label }}">Nhập lại mật khẩu</label>
             {{ form.password2 }}
             {{ form.password2.errors }}
+
+            <div class="notify-row">
+                {{ form.receive_email }}
+                <div>
+                    <label for="{{ form.receive_email.id_for_label }}">Nhận thông báo qua email</label>
+                    <div class="notify-help">Nhận tin khi có đề mới, tài liệu mới, tính năng quan trọng hoặc thông báo liên quan đến tài khoản. Có thể tắt sau.</div>
+                    {{ form.receive_email.errors }}
+                </div>
+            </div>
 
             <button type="submit">Đăng ký tài khoản</button>
         </form>
