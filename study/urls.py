@@ -5,6 +5,7 @@ from . import views
 urlpatterns = [
     path('accounts/register/', views.register, name='register'),
     path('premium/', views.premium, name='premium'),
+    path('jlpt/n5/alphabet/', TemplateView.as_view(template_name='study/jlpt_n5_alphabet.html'), name='jlpt_n5_alphabet'),
     path('jlpt/<str:level>/', TemplateView.as_view(template_name='study/jlpt_level.html'), name='jlpt_level'),
     path('tokutei1/exam/<int:exam_id>/retry-wrong/<int:index>/', views.retry_wrong, name='retry_wrong'),
     path('tokutei1/exam/<int:exam_id>/intro/', views.exam_intro, name='exam_intro'),
