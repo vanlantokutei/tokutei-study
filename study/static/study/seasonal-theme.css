@@ -1,119 +1,51 @@
 :root{
-  --ui-primary:#1d4ed8;
-  --ui-primary-600:#2563eb;
-  --ui-primary-50:#eff6ff;
-  --ui-navy:#0b1220;
-  --ui-navy-2:#172033;
-  --ui-text:#18212f;
+  --ui-primary:#0f766e;
+  --ui-primary-600:#0d9488;
+  --ui-primary-50:#f0fdfa;
+  --ui-navy:#0f172a;
+  --ui-navy-2:#1e293b;
+  --ui-text:#1e293b;
   --ui-muted:#64748b;
-  --ui-bg:#f7f9fc;
+  --ui-bg:#f8fafc;
   --ui-card:#ffffff;
-  --ui-line:#e5eaf1;
-  --ui-line-strong:#d7dee8;
+  --ui-line:#e2e8f0;
+  --ui-line-strong:#cbd5e1;
   --ui-success:#15803d;
   --ui-warning:#b45309;
   --ui-danger:#b91c1c;
-  --ui-gold:#d6a520;
+  --ui-gold:#c8a45d;
   --ui-radius-sm:10px;
   --ui-radius:16px;
   --ui-radius-lg:20px;
   --ui-shadow-sm:0 2px 8px rgba(15,23,42,.045);
   --ui-shadow:0 10px 30px rgba(15,23,42,.075);
-  --ui-shadow-hover:0 16px 38px rgba(15,23,42,.12);
+  --ui-shadow-hover:0 16px 38px rgba(15,23,42,.11);
 }
-
 *{box-sizing:border-box}
 html{min-height:100%;background:var(--ui-bg);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 body{min-height:100vh;color:var(--ui-text)}
-
-/* Professional product foundation. Layout remains controlled by each page. */
 a{transition:color .16s ease,opacity .16s ease,background .16s ease,border-color .16s ease}
-button,.btn,input[type="submit"],.button{
-  font:inherit;
-  font-weight:700;
-  transition:transform .16s ease,box-shadow .16s ease,background .16s ease,border-color .16s ease;
-}
+button,.btn,input[type="submit"],.button{font:inherit;font-weight:700;transition:transform .16s ease,box-shadow .16s ease,background .16s ease,border-color .16s ease}
 button:hover,.btn:hover,input[type="submit"]:hover,.button:hover{transform:translateY(-1px)}
-
-input,select,textarea{
-  font:inherit;
-  border-color:var(--ui-line-strong);
-  outline:none;
-  background:#fff;
-}
-input:focus,select:focus,textarea:focus{
-  border-color:#7aa7f8!important;
-  box-shadow:0 0 0 3px rgba(37,99,235,.11)!important;
-}
-
-/* Navigation bars */
-.topbar,.navbar,header.topbar{
-  background:rgba(255,255,255,.96)!important;
-  color:var(--ui-text)!important;
-  border-bottom:1px solid var(--ui-line)!important;
-  box-shadow:0 1px 0 rgba(15,23,42,.02)!important;
-  backdrop-filter:blur(14px);
-  -webkit-backdrop-filter:blur(14px);
-}
+input,select,textarea{font:inherit;border-color:var(--ui-line-strong);outline:none;background:#fff}
+input:focus,select:focus,textarea:focus{border-color:#5eead4!important;box-shadow:0 0 0 3px rgba(13,148,136,.12)!important}
+.topbar,.navbar,header.topbar{background:rgba(255,255,255,.97)!important;color:var(--ui-text)!important;border-bottom:1px solid var(--ui-line)!important;box-shadow:0 1px 0 rgba(15,23,42,.025)!important;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
 .topbar .brand,.navbar .brand{color:var(--ui-navy)!important;letter-spacing:-.02em}
 .topbar .back,.navbar .back{color:var(--ui-primary)!important}
-
-/* Common cards and panels */
-.card,.main-card,.panel,.mini-card,.topic-chip,.industry,.level-card,.quiz-card,.lesson-card{
-  background:var(--ui-card)!important;
-  border-color:var(--ui-line)!important;
-  box-shadow:var(--ui-shadow-sm)!important;
-}
-.card,.main-card,.panel,.mini-card,.industry,.level-card,.quiz-card,.lesson-card{
-  border-radius:var(--ui-radius-lg)!important;
-}
-.card:hover,.main-card:hover,.industry:hover,.mini-card:hover,.topic-chip:hover{
-  border-color:#c9d7ee!important;
-  box-shadow:var(--ui-shadow-hover)!important;
-}
-
-/* Primary actions */
-.btn-primary,button[type="submit"],input[type="submit"],.button.default,.premium-btn{
-  background:linear-gradient(180deg,var(--ui-primary-600),var(--ui-primary))!important;
-  border-color:var(--ui-primary)!important;
-  color:#fff!important;
-  box-shadow:0 6px 16px rgba(37,99,235,.18)!important;
-}
-.btn-primary:hover,button[type="submit"]:hover,input[type="submit"]:hover,.button.default:hover,.premium-btn:hover{
-  background:linear-gradient(180deg,#1f57d6,#1e40af)!important;
-  box-shadow:0 9px 22px rgba(37,99,235,.24)!important;
-}
-
-/* Premium should look commercial, not flashy. */
-.premium,.premium-banner{
-  border:1px solid #eadba6!important;
-  box-shadow:0 10px 28px rgba(85,65,15,.08)!important;
-}
-.premium-banner a{box-shadow:0 5px 16px rgba(214,165,32,.18)}
-
-/* Headings and supporting text */
+.card,.main-card,.panel,.mini-card,.topic-chip,.industry,.level-card,.quiz-card,.lesson-card{background:var(--ui-card)!important;border-color:var(--ui-line)!important;box-shadow:var(--ui-shadow-sm)!important}
+.card,.main-card,.panel,.mini-card,.industry,.level-card,.quiz-card,.lesson-card{border-radius:var(--ui-radius-lg)!important}
+.card:hover,.main-card:hover,.industry:hover,.mini-card:hover,.topic-chip:hover{border-color:#99d8d2!important;box-shadow:var(--ui-shadow-hover)!important}
+.btn-primary,button[type="submit"],input[type="submit"],.button.default,.premium-btn{background:linear-gradient(180deg,var(--ui-primary-600),var(--ui-primary))!important;border-color:var(--ui-primary)!important;color:#fff!important;box-shadow:0 6px 16px rgba(15,118,110,.18)!important}
+.btn-primary:hover,button[type="submit"]:hover,input[type="submit"]:hover,.button.default:hover,.premium-btn:hover{background:linear-gradient(180deg,#0f8b81,#115e59)!important;box-shadow:0 9px 22px rgba(15,118,110,.24)!important}
+.go,.back,.nav a:hover{color:var(--ui-primary)!important}
+.eyebrow{color:var(--ui-primary)!important;border-color:#ccfbf1!important}
+.icon{background:var(--ui-primary-50)!important}
+.premium,.premium-banner{border:1px solid #e4d2a7!important;box-shadow:0 10px 28px rgba(91,69,25,.08)!important}
+.premium-banner a{background:var(--ui-gold)!important;color:#241a08!important;box-shadow:0 5px 16px rgba(200,164,93,.20)}
 h1,h2,h3{letter-spacing:-.02em}
 .section-title h2{color:var(--ui-navy)!important}
 .section-sub,.section-title p,.card p,.main-card p,.mini-card span{color:var(--ui-muted)!important}
-
-/* Remove old seasonal decorations and visual noise. */
-.seasonal-float{display:none!important}
-body:before{display:none!important;content:none!important}
-.focus-music{display:none!important}
-
-/* Accessible focus state. */
-a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{
-  outline:3px solid rgba(37,99,235,.20);
-  outline-offset:2px;
-}
-
-/* More restrained motion on touch devices. */
-@media(max-width:720px){
-  body{padding-bottom:max(0px,env(safe-area-inset-bottom))}
-  .card,.main-card,.panel,.mini-card,.industry,.level-card,.quiz-card,.lesson-card{border-radius:16px!important}
-  .card:hover,.main-card:hover,.industry:hover,.mini-card:hover,.topic-chip:hover{transform:none!important;box-shadow:var(--ui-shadow-sm)!important}
-}
-
-@media(prefers-reduced-motion:reduce){
-  *{scroll-behavior:auto!important;animation:none!important;transition:none!important}
-}
+.seasonal-float{display:none!important}body:before{display:none!important;content:none!important}.focus-music{display:none!important}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid rgba(13,148,136,.20);outline-offset:2px}
+@media(max-width:720px){body{padding-bottom:max(0px,env(safe-area-inset-bottom))}.card,.main-card,.panel,.mini-card,.industry,.level-card,.quiz-card,.lesson-card{border-radius:16px!important}.card:hover,.main-card:hover,.industry:hover,.mini-card:hover,.topic-chip:hover{transform:none!important;box-shadow:var(--ui-shadow-sm)!important}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
