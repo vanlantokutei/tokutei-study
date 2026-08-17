@@ -1,5 +1,5 @@
 class RemoveVocabularyFlagMiddleware:
-    """Remove the Vietnam flag emoji from rendered JLPT vocabulary HTML."""
+    """Normalize Vietnamese labels in rendered JLPT N5 vocabulary HTML."""
 
     def __init__(self, get_response):
         self.get_response = get_response
@@ -19,10 +19,13 @@ class RemoveVocabularyFlagMiddleware:
         except (UnicodeDecodeError, AttributeError):
             return response
 
-        if '🇻🇳' in html:
-            html = html.replace('🇻🇳 ', '').replace('🇻🇳', '')
-            response.content = html.encode(response.charset or 'utf-8')
-            if response.has_header('Content-Length'):
-                response['Content-Length'] = str(len(response.content))
+        # Convert old flag-based labels to explicit Vietnamese labels.
+        html = html.replace('<div class="meaning">🇻🇳 ', '<div class="meaning"><span class="vn-label">Nghĩa tiếng Việt:</span> ')
+        html = html.replace('<div class="vi">🇻🇳 ', '<div class="vi"><span class="vn-label">Dịch tiếng Việt:</span> ')
+        html = html.replace('🇻🇳 ', '').replace('🇻🇳', '')
+
+        response.content = html.encode(response.charset or 'utf-8')
+        if response.has_header('Content-Length'):
+            response['Content-Length'] = str(len(response.content))
 
         return response
