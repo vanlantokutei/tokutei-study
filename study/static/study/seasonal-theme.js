@@ -1,39 +1,87 @@
 (function(){
   var month=(new Date()).getMonth()+1;
   var season=(month===3||month===4)?'sakura':(month===5||month===6)?'rainy':(month===7||month===8)?'summer':(month>=9&&month<=11)?'autumn':'winter';
-  var symbols={sakura:['🌸','✿'],rainy:['✾','•'],summer:['✦','·'],autumn:['◆','🍁'],winter:['❄','·']};document.documentElement.setAttribute('data-season',season);
-  function decorate(){if(document.querySelector('.seasonal-float'))return;for(var i=0;i<12;i++){var e=document.createElement('span');e.className='seasonal-float';e.textContent=symbols[season][i%2];e.style.left=(3+Math.random()*94)+'vw';e.style.animationDuration=(9+Math.random()*9)+'s';e.style.animationDelay=(-Math.random()*16)+'s';e.style.fontSize=(12+Math.random()*14)+'px';document.body.appendChild(e)}}
+  var symbols={sakura:['🌸','✿'],rainy:['✾','•'],summer:['✦','·'],autumn:['◆','🍁'],winter:['❄','·']};
+  document.documentElement.setAttribute('data-season',season);
+
+  function decorate(){
+    if(document.querySelector('.seasonal-float')) return;
+    for(var i=0;i<12;i++){
+      var e=document.createElement('span');
+      e.className='seasonal-float';
+      e.textContent=symbols[season][i%2];
+      e.style.left=(3+Math.random()*94)+'vw';
+      e.style.animationDuration=(9+Math.random()*9)+'s';
+      e.style.animationDelay=(-Math.random()*16)+'s';
+      e.style.fontSize=(12+Math.random()*14)+'px';
+      document.body.appendChild(e);
+    }
+  }
+
   function focusPlayer(){
-    if(document.getElementById('focusMusic'))return;
+    if(document.getElementById('focusMusic')) return;
+    if(document.body && document.body.id==='library-page') return;
     var KEY='tokuteiFocusMusicV5';
-    var tracks=[['Relaxing Piano Music','piano_solo_nhac_nen_piano-relaxing-piano-music-nhac-nen-video-227817-96k.mp3'],['Peaceful Piano Music','piano_solo_nhac_nen_piano-peaceful-piano-music-piano-bgm-227820-96k.mp3'],['Beautiful Piano – Study & Relax','piano_solo_nhac_nen_piano-beautiful-piano-tracks-for-studying-relaxation-sleep-piano-bgm-227821-96k.mp3'],['Khi Tình Yêu Nở Hoa','piano_solo_nhac_nen_piano-khi-tinh-yeu-no-hoa-nhac-nen-video-227815-96k.mp3'],['Tuổi Thơ Hồn Nhiên Thơ Ngây','piano_solo_nhac_nen_piano-tuoi-tho-hon-nhien-tho-ngay-nhac-nen-video-227569-96k.mp3'],['Serene Study Sessions','piano_solo_nhac_nen_piano-serene-study-sessions-piano-version-nhac-nen-video-269279-96k.mp3'],['Ghế Mây Lắc Lư','piano_solo_nhac_nen_piano-ghe-may-lac-lu-thu-gian-that-nhe-nhang-nhac-nen-video-223280-96k.mp3']];
-    var saved={};try{saved=JSON.parse(sessionStorage.getItem(KEY)||'{}')}catch(e){}
+    var tracks=[
+      ['Relaxing Piano Music','piano_solo_nhac_nen_piano-relaxing-piano-music-nhac-nen-video-227817-96k.mp3'],
+      ['Peaceful Piano Music','piano_solo_nhac_nen_piano-peaceful-piano-music-piano-bgm-227820-96k.mp3'],
+      ['Beautiful Piano – Study & Relax','piano_solo_nhac_nen_piano-beautiful-piano-tracks-for-studying-relaxation-sleep-piano-bgm-227821-96k.mp3'],
+      ['Khi Tình Yêu Nở Hoa','piano_solo_nhac_nen_piano-khi-tinh-yeu-no-hoa-nhac-nen-video-227815-96k.mp3'],
+      ['Tuổi Thơ Hồn Nhiên Thơ Ngây','piano_solo_nhac_nen_piano-tuoi-tho-hon-nhien-tho-ngay-nhac-nen-video-227569-96k.mp3'],
+      ['Serene Study Sessions','piano_solo_nhac_nen_piano-serene-study-sessions-piano-version-nhac-nen-video-269279-96k.mp3'],
+      ['Ghế Mây Lắc Lư','piano_solo_nhac_nen_piano-ghe-may-lac-lu-thu-gian-that-nhe-nhang-nhac-nen-video-223280-96k.mp3']
+    ];
+    var saved={};
+    try{ saved=JSON.parse(sessionStorage.getItem(KEY)||'{}'); }catch(e){}
     var index=Number.isInteger(saved.index)?Math.max(0,Math.min(6,saved.index)):0;
-    var audio=new Audio();audio.preload='auto';audio.volume=saved.volume!=null?saved.volume:.38;
+    var audio=new Audio();
+    audio.preload='auto';
+    audio.volume=saved.volume!=null?saved.volume:.38;
     var minimizeTimer=null;
-    var box=document.createElement('div');box.id='focusMusic';box.className='focus-music invite';box.innerHTML='<button class="focus-close" type="button" aria-label="Tắt nhạc">×</button><div class="focus-invite"><div class="focus-emoji">🎧</div><div><strong>Học hơi căng rồi hả?</strong><span>Bật chút piano nhẹ để tập trung hơn nè ✨</span><button class="focus-start" type="button">▶ Nghe nhạc cùng mình</button></div></div><div class="focus-controls"><div class="focus-now"><span>🎹 Tokutei Focus Mix ♪</span><small>7 bài piano</small></div><div class="focus-buttons"><button data-act="prev" type="button">⏮</button><button data-act="play" type="button">▶</button><button data-act="next" type="button">⏭</button><label>🔉 <input class="focus-volume" type="range" min="0" max="1" step="0.05" value="'+audio.volume+'"></label></div></div><button class="focus-mini" type="button">🎧 Đang phát nhạc ♪</button>';
+    var box=document.createElement('div');
+    box.id='focusMusic';
+    box.className='focus-music invite';
+    box.innerHTML='<button class="focus-close" type="button" aria-label="Tắt nhạc">×</button><div class="focus-invite"><div class="focus-emoji">🎧</div><div><strong>Học hơi căng rồi hả?</strong><span>Bật chút piano nhẹ để tập trung hơn nè ✨</span><button class="focus-start" type="button">▶ Nghe nhạc cùng mình</button></div></div><div class="focus-controls"><div class="focus-now"><span>🎹 Tokutei Focus Mix ♪</span><small>7 bài piano</small></div><div class="focus-buttons"><button data-act="prev" type="button">⏮</button><button data-act="play" type="button">▶</button><button data-act="next" type="button">⏭</button><label>🔉 <input class="focus-volume" type="range" min="0" max="1" step="0.05" value="'+audio.volume+'"></label></div></div><button class="focus-mini" type="button">🎧 Đang phát nhạc ♪</button>';
     document.body.appendChild(box);
     var start=box.querySelector('.focus-start'),play=box.querySelector('[data-act="play"]'),now=box.querySelector('.focus-now small'),vol=box.querySelector('.focus-volume'),mini=box.querySelector('.focus-mini');
-    function url(i){return '/static/focus_music/'+encodeURIComponent(tracks[i][1])}
-    function save(){try{sessionStorage.setItem(KEY,JSON.stringify({index:index,time:audio.currentTime||0,volume:audio.volume,playing:!audio.paused,minimized:box.classList.contains('hidden')}))}catch(e){}}
-    function load(i,time){index=(i+tracks.length)%tracks.length;audio.src=url(index);now.textContent=(index+1)+'/7 · '+tracks[index][0];audio.onloadedmetadata=function(){if(time)audio.currentTime=Math.min(time,audio.duration-.2)}}
-    function scheduleMinimize(){if(minimizeTimer)clearTimeout(minimizeTimer);minimizeTimer=setTimeout(function(){if(!audio.paused){box.classList.add('hidden');save()}},3000)}
-    function begin(){audio.play().then(function(){play.textContent='⏸';box.classList.remove('invite');box.classList.add('active');save();scheduleMinimize()}).catch(function(){now.textContent='Bấm ▶ để tiếp tục nhạc'})}
-    function pause(){audio.pause();play.textContent='▶';if(minimizeTimer)clearTimeout(minimizeTimer);save()}
-    function change(n){var p=!audio.paused;load(index+n,0);if(p||n)begin()}
-    audio.onended=function(){load(index+1,0);begin()};audio.ontimeupdate=function(){if(!audio.paused)save()};
-    start.onclick=begin;play.onclick=function(){audio.paused?begin():pause()};box.querySelector('[data-act="prev"]').onclick=function(){change(-1)};box.querySelector('[data-act="next"]').onclick=function(){change(1)};vol.oninput=function(){audio.volume=parseFloat(this.value);save()};
-    box.querySelector('.focus-close').onclick=function(){pause();box.classList.add('hidden');mini.textContent='🎧 Nhạc tập trung';save()};
-    mini.onclick=function(){box.classList.remove('hidden');box.classList.add('active');mini.textContent='🎧 Đang phát nhạc ♪';if(!audio.paused)scheduleMinimize()};
+    function url(i){ return '/static/focus_music/'+encodeURIComponent(tracks[i][1]); }
+    function save(){ try{ sessionStorage.setItem(KEY,JSON.stringify({index:index,time:audio.currentTime||0,volume:audio.volume,playing:!audio.paused,minimized:box.classList.contains('hidden')})); }catch(e){} }
+    function load(i,time){ index=(i+tracks.length)%tracks.length; audio.src=url(index); now.textContent=(index+1)+'/7 · '+tracks[index][0]; audio.onloadedmetadata=function(){ if(time) audio.currentTime=Math.min(time,audio.duration-.2); }; }
+    function scheduleMinimize(){ if(minimizeTimer) clearTimeout(minimizeTimer); minimizeTimer=setTimeout(function(){ if(!audio.paused){ box.classList.add('hidden'); save(); } },3000); }
+    function begin(){ audio.play().then(function(){ play.textContent='⏸'; box.classList.remove('invite'); box.classList.add('active'); save(); scheduleMinimize(); }).catch(function(){ now.textContent='Bấm ▶ để tiếp tục nhạc'; }); }
+    function pause(){ audio.pause(); play.textContent='▶'; if(minimizeTimer) clearTimeout(minimizeTimer); save(); }
+    function change(n){ var p=!audio.paused; load(index+n,0); if(p||n) begin(); }
+    audio.onended=function(){ load(index+1,0); begin(); };
+    audio.ontimeupdate=function(){ if(!audio.paused) save(); };
+    start.onclick=begin;
+    play.onclick=function(){ audio.paused?begin():pause(); };
+    box.querySelector('[data-act="prev"]').onclick=function(){ change(-1); };
+    box.querySelector('[data-act="next"]').onclick=function(){ change(1); };
+    vol.oninput=function(){ audio.volume=parseFloat(this.value); save(); };
+    box.querySelector('.focus-close').onclick=function(){ pause(); box.classList.add('hidden'); mini.textContent='🎧 Nhạc tập trung'; save(); };
+    mini.onclick=function(){ box.classList.remove('hidden'); box.classList.add('active'); mini.textContent='🎧 Đang phát nhạc ♪'; if(!audio.paused) scheduleMinimize(); };
     load(index,saved.time||0);
-    if(saved.playing){box.classList.remove('invite');box.classList.add('active');if(saved.minimized)box.classList.add('hidden');audio.oncanplay=function(){audio.oncanplay=null;begin()}}
+    if(saved.playing){ box.classList.remove('invite'); box.classList.add('active'); if(saved.minimized) box.classList.add('hidden'); audio.oncanplay=function(){ audio.oncanplay=null; begin(); }; }
   }
-  function softNav(){var busy=false;
-    function isSoftPath(path){return path==='/'||/^\/tokutei1\/?$/.test(path)||/^\/tokutei1\/library\/?/.test(path)||/^\/tokutei1\/vocabulary\/?$/.test(path)||/^\/tokutei1\/situations\/?$/.test(path)||/^\/tinh-huong\/?$/.test(path)}
-    function eligible(a){if(!a||busy||a.target==='_blank'||a.hasAttribute('download'))return false;var u;try{u=new URL(a.href,location.href)}catch(e){return false}if(u.origin!==location.origin)return false;if(!isSoftPath(u.pathname))return false;return true}
-    async function go(url,push){busy=true;document.documentElement.style.cursor='progress';try{var r=await fetch(url,{headers:{'X-Requested-With':'soft-nav'}});if(!r.ok)throw new Error();var html=await r.text(),doc=new DOMParser().parseFromString(html,'text/html');var player=document.getElementById('focusMusic');var floats=[].slice.call(document.querySelectorAll('.seasonal-float'));var newBody=doc.body;[].slice.call(document.body.children).forEach(function(n){if(n!==player&&floats.indexOf(n)<0)n.remove()});[].slice.call(newBody.children).forEach(function(n){if(n.id!=='focusMusic'&&!n.classList.contains('seasonal-float'))document.body.insertBefore(document.importNode(n,true),player||null)});document.title=doc.title;if(push)history.pushState({soft:true},'',url);window.scrollTo(0,0)}catch(e){location.href=url}finally{busy=false;document.documentElement.style.cursor=''}}
-    document.addEventListener('click',function(e){if(e.defaultPrevented||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;var a=e.target.closest&&e.target.closest('a[href]');if(eligible(a)){e.preventDefault();go(a.href,true)}},false);
-    window.addEventListener('popstate',function(){if(isSoftPath(location.pathname))go(location.href,false)})
+
+  function softNav(){
+    function isSoftPath(path){
+      return path==='/'||/^\/tokutei1\/?$/.test(path)||/^\/tokutei1\/library\/?$/.test(path)||/^\/tokutei1\/vocabulary\/?$/.test(path)||/^\/tokutei1\/situations\/?$/.test(path)||/^\/tinh-huong\/?$/.test(path);
+    }
+
+    document.addEventListener('click',function(e){
+      if(e.defaultPrevented||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey) return;
+      var a=e.target.closest&&e.target.closest('a[href]');
+      if(!a||a.target==='_blank'||a.hasAttribute('download')) return;
+      var u;
+      try{ u=new URL(a.href,location.href); }catch(err){ return; }
+      if(u.origin!==location.origin) return;
+      if(!isSoftPath(u.pathname)) return;
+      e.preventDefault();
+      location.href=u.href;
+    },false);
   }
-  function init(){decorate();focusPlayer();softNav()}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+
+  function init(){ decorate(); focusPlayer(); softNav(); }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init); else init();
 })();
