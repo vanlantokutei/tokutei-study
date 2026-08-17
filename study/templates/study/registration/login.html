@@ -1,36 +1,5 @@
 {% load static %}
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đăng nhập | Tokutei Study</title>
-  <link rel="stylesheet" href="{% static 'study/seasonal-theme.css' %}">
-  <script defer src="{% static 'study/seasonal-theme.js' %}"></script>
-</head>
-<body>
-    <h1>Đăng nhập</h1>
-
-    {% if form.errors %}
-        <p>Tên đăng nhập hoặc mật khẩu không đúng.</p>
-    {% endif %}
-
-    <form method="post">
-        {% csrf_token %}
-
-        <p>
-            <label>Tên đăng nhập:</label>
-            {{ form.username }}
-        </p>
-
-        <p>
-            <label>Mật khẩu:</label>
-            {{ form.password }}
-        </p>
-
-        <button type="submit">Đăng nhập</button>
-    </form>
-
-    <p><a href="/">← Về trang chủ</a></p>
-</body>
-</html>
+<!DOCTYPE html><html lang="vi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Đăng nhập | Ôn Thi Tokutei</title>
+<style>
+*{box-sizing:border-box}body{margin:0;min-height:100vh;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:linear-gradient(135deg,#f8fafc,#ecfdf5);color:#1e293b;display:flex;align-items:center;justify-content:center;padding:24px}.auth-shell{width:min(100%,440px)}.brand{text-align:center;font-weight:900;font-size:24px;color:#0f172a;margin-bottom:18px}.auth-card{background:#fff;border:1px solid #e2e8f0;border-radius:24px;padding:30px;box-shadow:0 22px 60px rgba(15,23,42,.11)}h1{margin:0 0 8px;font-size:28px;color:#0f172a}.sub{margin:0 0 24px;color:#64748b;line-height:1.5}.error{background:#fef2f2;border:1px solid #fecaca;color:#b91c1c;border-radius:12px;padding:12px 14px;margin-bottom:16px;font-size:14px}.field{margin-bottom:16px}.field label{display:block;font-weight:800;margin-bottom:7px;color:#334155}.field input{width:100%;padding:13px 14px;border:1px solid #cbd5e1;border-radius:12px;background:#fff}.password-wrap{position:relative}.password-wrap input{padding-right:48px}.toggle{position:absolute;right:10px;top:50%;transform:translateY(-50%);border:0;background:transparent;color:#64748b;cursor:pointer;font-size:18px}.submit{width:100%;border:0;border-radius:12px;padding:13px 16px;background:#0f766e;color:#fff;font-weight:850;cursor:pointer;margin-top:4px}.back{display:block;text-align:center;margin-top:17px;color:#0f766e;font-weight:750}.foot{text-align:center;color:#94a3b8;font-size:12px;margin-top:16px}@media(max-width:480px){.auth-card{padding:24px 20px;border-radius:20px}}
+</style><link rel="stylesheet" href="{% static 'study/seasonal-theme.css' %}"><script defer src="{% static 'study/seasonal-theme.js' %}"></script></head><body><main class="auth-shell"><div class="brand">🇯🇵 ÔN THI TOKUTEI</div><section class="auth-card"><h1>Đăng nhập</h1><p class="sub">Tiếp tục học, làm đề và quản lý quyền Premium của bạn.</p>{% if form.errors %}<div class="error">Tên đăng nhập hoặc mật khẩu không đúng. Vui lòng kiểm tra lại.</div>{% endif %}<form method="post">{% csrf_token %}<div class="field"><label for="{{ form.username.id_for_label }}">Tên đăng nhập</label>{{ form.username }}</div><div class="field"><label for="{{ form.password.id_for_label }}">Mật khẩu</label><div class="password-wrap">{{ form.password }}<button class="toggle" type="button" onclick="togglePassword(this)" aria-label="Hiện mật khẩu">👁</button></div></div><button class="submit" type="submit">Đăng nhập →</button></form><a class="back" href="/">← Về trang chủ</a></section><div class="foot">Tokutei Study · Nền tảng học và luyện thi dành cho người Việt tại Nhật</div></main><script>function togglePassword(btn){const input=document.getElementById('{{ form.password.id_for_label }}');if(!input)return;const show=input.type==='password';input.type=show?'text':'password';btn.textContent=show?'🙈':'👁';btn.setAttribute('aria-label',show?'Ẩn mật khẩu':'Hiện mật khẩu')}</script></body></html>
