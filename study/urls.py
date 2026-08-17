@@ -10,6 +10,7 @@ urlpatterns = [
     path('jlpt/n5/vocabulary/lesson-2/', TemplateView.as_view(template_name='study/jlpt_n5_vocabulary_lesson2.html'), name='jlpt_n5_vocabulary_lesson2'),
     path('jlpt/n5/vocabulary/lesson-3/', TemplateView.as_view(template_name='study/jlpt_n5_vocabulary_lesson3.html'), name='jlpt_n5_vocabulary_lesson3'),
     path('jlpt/n5/vocabulary/lesson-4/', TemplateView.as_view(template_name='study/jlpt_n5_vocabulary_lesson4.html'), name='jlpt_n5_vocabulary_lesson4'),
+    path('jlpt/n5/vocabulary/lesson-5/', TemplateView.as_view(template_name='study/jlpt_n5_vocabulary_lesson5.html'), name='jlpt_n5_vocabulary_lesson5'),
     path('jlpt/n5/grammar/', TemplateView.as_view(template_name='study/jlpt_n5_grammar.html'), name='jlpt_n5_grammar'),
     path('jlpt/n5/grammar/lesson-1/', TemplateView.as_view(template_name='study/jlpt_n5_grammar_lesson1.html'), name='jlpt_n5_grammar_lesson1'),
     path('jlpt/<str:level>/', TemplateView.as_view(template_name='study/jlpt_level.html'), name='jlpt_level'),
