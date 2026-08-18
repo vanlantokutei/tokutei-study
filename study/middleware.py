@@ -22,12 +22,10 @@ class RemoveVocabularyFlagMiddleware:
         except (UnicodeDecodeError, AttributeError):
             return response
 
-        # Convert old flag-based labels to explicit Vietnamese labels.
         html = html.replace('<div class="meaning">🇻🇳 ', '<div class="meaning"><span class="vn-label">Nghĩa tiếng Việt:</span> ')
         html = html.replace('<div class="vi">🇻🇳 ', '<div class="vi"><span class="vn-label">Dịch tiếng Việt:</span> ')
         html = html.replace('🇻🇳 ', '').replace('🇻🇳', '')
 
-        # Capitalize only the first character of each Vietnamese vocabulary meaning.
         def capitalize_meaning(match):
             prefix, value, suffix = match.groups()
             if not value:
@@ -40,7 +38,6 @@ class RemoveVocabularyFlagMiddleware:
             html,
         )
 
-        # Let learners jump directly to any vocabulary lesson that already exists.
         lesson_jump_script = r'''
 <script id="jlpt-vocab-direct-jump">
 (function () {
@@ -49,7 +46,7 @@ class RemoveVocabularyFlagMiddleware:
 
   var match = location.pathname.match(/\/lesson-(\d+)\/?$/);
   var currentLesson = match ? parseInt(match[1], 10) : 1;
-  var maxAvailableLesson = 9;
+  var maxAvailableLesson = 10;
 
   grid.querySelectorAll('.lesson-chip').forEach(function (chip) {
     var lesson = parseInt((chip.textContent || '').trim(), 10);
@@ -82,8 +79,6 @@ class RemoveVocabularyFlagMiddleware:
 </script>
 '''
 
-        # Add a three-line hamburger beside the JLPT N5 vocabulary badge so learners
-        # can quickly switch between vocabulary, kanji, grammar and the other N5 areas.
         section_menu_script = r'''
 <style id="jlpt-n5-section-menu-style">
 .jlpt-section-row{display:flex;align-items:center;gap:10px;position:relative;width:max-content;max-width:100%}
@@ -101,25 +96,9 @@ class RemoveVocabularyFlagMiddleware:
 (function(){
   var badge=document.querySelector('.badge');
   if(!badge || document.getElementById('jlptN5SectionMenuBtn')) return;
-
-  var row=document.createElement('div');
-  row.className='jlpt-section-row';
-  badge.parentNode.insertBefore(row,badge);
-  row.appendChild(badge);
-
-  var btn=document.createElement('button');
-  btn.type='button';
-  btn.id='jlptN5SectionMenuBtn';
-  btn.className='jlpt-section-menu-btn';
-  btn.setAttribute('aria-label','Mở menu JLPT N5');
-  btn.setAttribute('aria-expanded','false');
-  btn.innerHTML='<span></span><span></span><span></span>';
-  row.appendChild(btn);
-
-  var menu=document.createElement('nav');
-  menu.className='jlpt-section-menu';
-  menu.id='jlptN5SectionMenu';
-  menu.innerHTML='\
+  var row=document.createElement('div');row.className='jlpt-section-row';badge.parentNode.insertBefore(row,badge);row.appendChild(badge);
+  var btn=document.createElement('button');btn.type='button';btn.id='jlptN5SectionMenuBtn';btn.className='jlpt-section-menu-btn';btn.setAttribute('aria-label','Mở menu JLPT N5');btn.setAttribute('aria-expanded','false');btn.innerHTML='<span></span><span></span><span></span>';row.appendChild(btn);
+  var menu=document.createElement('nav');menu.className='jlpt-section-menu';menu.id='jlptN5SectionMenu';menu.innerHTML='\
     <a href="/jlpt/n5/alphabet/"><span class="mi">🔤</span>Bảng chữ cái</a>\
     <a class="current" href="/jlpt/n5/vocabulary/"><span class="mi">🈶</span>Từ vựng</a>\
     <a href="/jlpt/n5/?section=kanji"><span class="mi">漢</span>Kanji</a>\
@@ -127,9 +106,7 @@ class RemoveVocabularyFlagMiddleware:
     <a href="/jlpt/n5/?section=reading"><span class="mi">📖</span>Đọc hiểu</a>\
     <a href="/jlpt/n5/?section=listening"><span class="mi">🎧</span>Nghe hiểu</a>\
     <a href="/jlpt/n5/?section=mock"><span class="mi">🎯</span>Thi thử</a>\
-    <a href="/jlpt/n5/"><span class="mi">↩️</span>Trang JLPT N5</a>';
-  row.appendChild(menu);
-
+    <a href="/jlpt/n5/"><span class="mi">↩️</span>Trang JLPT N5</a>';row.appendChild(menu);
   function closeMenu(){menu.classList.remove('open');btn.setAttribute('aria-expanded','false');}
   btn.addEventListener('click',function(e){e.stopPropagation();var open=menu.classList.toggle('open');btn.setAttribute('aria-expanded',open?'true':'false');});
   document.addEventListener('click',function(e){if(!row.contains(e.target)) closeMenu();});
