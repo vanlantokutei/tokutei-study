@@ -34,7 +34,34 @@
             border-radius: 10px;
             font-size: 16px;
         }
-        button {
+        .password-wrap {
+            position: relative;
+        }
+        .password-wrap input {
+            padding-right: 48px;
+        }
+        .password-toggle {
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 36px;
+            height: 36px;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            place-items: center;
+            border: 0;
+            border-radius: 8px;
+            background: transparent;
+            color: #64748b;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .password-toggle:hover {
+            background: #f1f5f9;
+        }
+        .submit-btn {
             width: 100%;
             margin-top: 22px;
             padding: 13px;
@@ -75,14 +102,39 @@
             {{ form.username }}
 
             <label for="{{ form.password.id_for_label }}">Mật khẩu</label>
-            {{ form.password }}
+            <div class="password-wrap">
+                {{ form.password }}
+                <button
+                    type="button"
+                    class="password-toggle"
+                    id="togglePassword"
+                    aria-label="Hiện mật khẩu"
+                    title="Hiện mật khẩu"
+                >👁️</button>
+            </div>
 
-            <button type="submit">Đăng nhập</button>
+            <button class="submit-btn" type="submit">Đăng nhập</button>
         </form>
 
         <p class="back"><a href="/">← Về trang chủ</a></p>
         <p class="back">Chưa có tài khoản? <a href="{% url 'register' %}">Đăng ký miễn phí</a></p>
     </main>
 
+    <script>
+        (function () {
+            const passwordInput = document.getElementById('{{ form.password.id_for_label }}');
+            const toggleButton = document.getElementById('togglePassword');
+
+            if (!passwordInput || !toggleButton) return;
+
+            toggleButton.addEventListener('click', function () {
+                const isHidden = passwordInput.type === 'password';
+                passwordInput.type = isHidden ? 'text' : 'password';
+                toggleButton.textContent = isHidden ? '🙈' : '👁️';
+                toggleButton.setAttribute('aria-label', isHidden ? 'Ẩn mật khẩu' : 'Hiện mật khẩu');
+                toggleButton.setAttribute('title', isHidden ? 'Ẩn mật khẩu' : 'Hiện mật khẩu');
+            });
+        })();
+    </script>
 </body>
 </html>
