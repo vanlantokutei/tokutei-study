@@ -2,7 +2,7 @@ import re
 
 
 class RemoveVocabularyFlagMiddleware:
-    """Normalize Vietnamese labels in rendered JLPT N5 vocabulary HTML."""
+    """Normalize Vietnamese labels and improve JLPT N5 vocabulary navigation."""
 
     def __init__(self, get_response):
         self.get_response = get_response
@@ -39,6 +39,55 @@ class RemoveVocabularyFlagMiddleware:
             capitalize_meaning,
             html,
         )
+
+        # Allow learners to jump directly to any vocabulary lesson that already exists.
+        # Lesson 1 uses the base vocabulary URL; lessons 2-9 have their own routes.
+        lesson_jump_script = r'''
+<script id="jlpt-vocab-direct-jump">
+(function () {
+  var grid = document.getElementById('lessonGrid');
+  if (!grid) return;
+
+  var match = location.pathname.match(/\/lesson-(\d+)\/?$/);
+  var currentLesson = match ? parseInt(match[1], 10) : 1;
+  var maxAvailableLesson = 9;
+
+  grid.querySelectorAll('.lesson-chip').forEach(function (chip) {
+    var lesson = parseInt((chip.textContent || '').trim(), 10);
+    if (!lesson || lesson > maxAvailableLesson) return;
+
+    chip.classList.remove('live', 'ready');
+    chip.classList.add(lesson === currentLesson ? 'live' : 'ready');
+    chip.style.cursor = 'pointer';
+    chip.setAttribute('role', 'link');
+    chip.setAttribute('tabindex', '0');
+    chip.setAttribute('aria-label', 'Mở bài từ vựng ' + lesson);
+
+    var url = lesson === 1
+      ? '/jlpt/n5/vocabulary/'
+      : '/jlpt/n5/vocabulary/lesson-' + lesson + '/';
+
+    function openLesson() {
+      if (location.pathname !== url) location.href = url;
+    }
+
+    chip.addEventListener('click', openLesson);
+    chip.addEventListener('keydown', function (event) {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        openLesson();
+      }
+    });
+  });
+})();
+</script>
+'''
+
+        if 'id="jlpt-vocab-direct-jump"' not in html:
+            if '</body>' in html:
+                html = html.replace('</body>', lesson_jump_script + '</body>')
+            else:
+                html += lesson_jump_script
 
         response.content = html.encode(response.charset or 'utf-8')
         if response.has_header('Content-Length'):
