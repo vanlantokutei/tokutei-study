@@ -16,6 +16,8 @@ from .models import (
 def user_has_premium(user):
     if not user.is_authenticated:
         return False
+    if user.is_staff or user.is_superuser:
+        return True
     return PremiumProfile.objects.filter(user=user, is_premium=True).exists()
 
 
