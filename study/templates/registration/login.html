@@ -34,12 +34,8 @@
             border-radius: 10px;
             font-size: 16px;
         }
-        .password-wrap {
-            position: relative;
-        }
-        .password-wrap input {
-            padding-right: 48px;
-        }
+        .password-wrap { position: relative; }
+        .password-wrap input { padding-right: 48px; }
         .password-toggle {
             position: absolute;
             right: 8px;
@@ -55,11 +51,17 @@
             border-radius: 8px;
             background: transparent;
             color: #64748b;
-            font-size: 20px;
             cursor: pointer;
         }
-        .password-toggle:hover {
-            background: #f1f5f9;
+        .password-toggle:hover { background: #f1f5f9; }
+        .password-toggle svg {
+            width: 22px;
+            height: 22px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
         }
         .submit-btn {
             width: 100%;
@@ -104,13 +106,18 @@
             <label for="{{ form.password.id_for_label }}">Mật khẩu</label>
             <div class="password-wrap">
                 {{ form.password }}
-                <button
-                    type="button"
-                    class="password-toggle"
-                    id="togglePassword"
-                    aria-label="Hiện mật khẩu"
-                    title="Hiện mật khẩu"
-                >👁️</button>
+                <button type="button" class="password-toggle" id="togglePassword" aria-label="Hiện mật khẩu" title="Hiện mật khẩu">
+                    <svg id="eyeOffIcon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M3 3l18 18"></path>
+                        <path d="M10.6 10.6a2 2 0 0 0 2.8 2.8"></path>
+                        <path d="M9.9 4.3A10.8 10.8 0 0 1 12 4c5.5 0 9.5 4.5 10 6-.5 1.5-1.7 3.2-3.4 4.5"></path>
+                        <path d="M6.6 6.6C4.2 8.1 2.5 10.3 2 12c.5 1.5 4.5 6 10 6a10 10 0 0 0 4.1-.9"></path>
+                    </svg>
+                    <svg id="eyeIcon" viewBox="0 0 24 24" aria-hidden="true" style="display:none">
+                        <path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12z"></path>
+                        <circle cx="12" cy="12" r="2.5"></circle>
+                    </svg>
+                </button>
             </div>
 
             <button class="submit-btn" type="submit">Đăng nhập</button>
@@ -124,13 +131,16 @@
         (function () {
             const passwordInput = document.getElementById('{{ form.password.id_for_label }}');
             const toggleButton = document.getElementById('togglePassword');
+            const eyeOffIcon = document.getElementById('eyeOffIcon');
+            const eyeIcon = document.getElementById('eyeIcon');
 
             if (!passwordInput || !toggleButton) return;
 
             toggleButton.addEventListener('click', function () {
                 const isHidden = passwordInput.type === 'password';
                 passwordInput.type = isHidden ? 'text' : 'password';
-                toggleButton.textContent = isHidden ? '🙈' : '👁️';
+                eyeOffIcon.style.display = isHidden ? 'none' : 'block';
+                eyeIcon.style.display = isHidden ? 'block' : 'none';
                 toggleButton.setAttribute('aria-label', isHidden ? 'Ẩn mật khẩu' : 'Hiện mật khẩu');
                 toggleButton.setAttribute('title', isHidden ? 'Ẩn mật khẩu' : 'Hiện mật khẩu');
             });
