@@ -2,7 +2,7 @@ import re
 
 
 class RemoveVocabularyFlagMiddleware:
-    """Normalize Vietnamese labels and improve JLPT N5 vocabulary navigation."""
+    """Normalize JLPT N5 vocabulary pages and shared navigation."""
 
     def __init__(self, get_response):
         self.get_response = get_response
@@ -22,56 +22,109 @@ class RemoveVocabularyFlagMiddleware:
         except (UnicodeDecodeError, AttributeError):
             return response
 
-        html = html.replace('<div class="meaning">🇻🇳 ', '<div class="meaning"><span class="vn-label">Nghĩa tiếng Việt:</span> ')
-        html = html.replace('<div class="vi">🇻🇳 ', '<div class="vi"><span class="vn-label">Dịch tiếng Việt:</span> ')
+        # Normalize Vietnamese labels used by newer and older lesson templates.
+        html = html.replace(
+            '<div class="meaning">🇻🇳 ',
+            '<div class="meaning"><span class="vn-label">Nghĩa tiếng Việt:</span> ',
+        )
+        html = html.replace(
+            '<div class="vi">🇻🇳 ',
+            '<div class="vi"><span class="vn-label">Dịch tiếng Việt:</span> ',
+        )
         html = html.replace('🇻🇳 ', '').replace('🇻🇳', '')
 
-        def capitalize_meaning(match):
+        # Server-side capitalization for templates already containing the shared label.
+        def capitalize_labeled_meaning(match):
             prefix, value, suffix = match.groups()
-            if not value:
+            value = value or ''
+            stripped = value.lstrip()
+            if not stripped:
                 return match.group(0)
-            return f'{prefix}{value[0].upper()}{value[1:]}{suffix}'
+            lead = value[:len(value) - len(stripped)]
+            return f'{prefix}{lead}{stripped[0].upper()}{stripped[1:]}{suffix}'
 
         html = re.sub(
             r'(<div class="meaning"><span class="vn-label">Nghĩa tiếng Việt:</span>\s*)([^<]*?)(</div>)',
-            capitalize_meaning,
+            capitalize_labeled_meaning,
             html,
         )
+
+        # This also handles old lessons whose meaning is rendered dynamically by JS.
+        # MutationObserver keeps capitalization correct after search/filter re-renders.
+        capitalization_script = r'''
+<script id="jlpt-vocab-capitalize-meaning">
+(function () {
+  function capitalizeTextNode(node) {
+    var text = node.nodeValue || '';
+    var m = text.match(/^(\s*)([a-zà-ỹ])/i);
+    if (!m) return false;
+    var index = m[1].length;
+    var ch = text.charAt(index);
+    var upper = ch.toLocaleUpperCase('vi-VN');
+    if (ch === upper) return false;
+    node.nodeValue = text.slice(0, index) + upper + text.slice(index + 1);
+    return true;
+  }
+
+  function fixMeaning(el) {
+    if (!el || !el.classList || !el.classList.contains('meaning')) return;
+    var nodes = Array.prototype.slice.call(el.childNodes);
+    for (var i = 0; i < nodes.length; i++) {
+      var node = nodes[i];
+      if (node.nodeType === Node.TEXT_NODE && capitalizeTextNode(node)) return;
+      if (node.nodeType === Node.ELEMENT_NODE &&
+          !node.classList.contains('vn-label') &&
+          node.tagName !== 'B' && node.tagName !== 'STRONG') {
+        var walker = document.createTreeWalker(node, NodeFilter.SHOW_TEXT);
+        var child;
+        while ((child = walker.nextNode())) {
+          if (capitalizeTextNode(child)) return;
+        }
+      }
+    }
+  }
+
+  function fixAll(root) {
+    if (root && root.classList && root.classList.contains('meaning')) fixMeaning(root);
+    (root || document).querySelectorAll && (root || document).querySelectorAll('.meaning').forEach(fixMeaning);
+  }
+
+  fixAll(document);
+  var observer = new MutationObserver(function (mutations) {
+    mutations.forEach(function (mutation) {
+      mutation.addedNodes.forEach(function (node) {
+        if (node.nodeType === Node.ELEMENT_NODE) fixAll(node);
+      });
+    });
+  });
+  observer.observe(document.body, {childList:true, subtree:true});
+})();
+</script>
+'''
 
         lesson_jump_script = r'''
 <script id="jlpt-vocab-direct-jump">
 (function () {
   var grid = document.getElementById('lessonGrid');
   if (!grid) return;
-
   var match = location.pathname.match(/\/lesson-(\d+)\/?$/);
   var currentLesson = match ? parseInt(match[1], 10) : 1;
-  var maxAvailableLesson = 10;
+  var maxAvailableLesson = 11;
 
   grid.querySelectorAll('.lesson-chip').forEach(function (chip) {
     var lesson = parseInt((chip.textContent || '').trim(), 10);
     if (!lesson || lesson > maxAvailableLesson) return;
-
     chip.classList.remove('live', 'ready');
     chip.classList.add(lesson === currentLesson ? 'live' : 'ready');
     chip.style.cursor = 'pointer';
     chip.setAttribute('role', 'link');
     chip.setAttribute('tabindex', '0');
-    chip.setAttribute('aria-label', 'Mở bài từ vựng ' + lesson);
-
-    var url = lesson === 1
-      ? '/jlpt/n5/vocabulary/'
-      : '/jlpt/n5/vocabulary/lesson-' + lesson + '/';
-
-    function openLesson() {
-      if (location.pathname !== url) location.href = url;
-    }
-
+    var url = lesson === 1 ? '/jlpt/n5/vocabulary/' : '/jlpt/n5/vocabulary/lesson-' + lesson + '/';
+    function openLesson() { if (location.pathname !== url) location.href = url; }
     chip.addEventListener('click', openLesson);
     chip.addEventListener('keydown', function (event) {
       if (event.key === 'Enter' || event.key === ' ') {
-        event.preventDefault();
-        openLesson();
+        event.preventDefault(); openLesson();
       }
     });
   });
@@ -85,11 +138,7 @@ class RemoveVocabularyFlagMiddleware:
 .jlpt-section-menu-btn{width:38px;height:38px;border:1px solid rgba(255,255,255,.28);border-radius:11px;background:rgba(255,255,255,.12);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;cursor:pointer;padding:0;box-shadow:none!important;transform:none!important}
 .jlpt-section-menu-btn span{display:block;width:18px;height:2px;border-radius:99px;background:#fff}
 .jlpt-section-menu{position:absolute;top:46px;left:0;z-index:1000;width:min(330px,86vw);background:#fff;border:1px solid #dbe5e8;border-radius:17px;padding:9px;box-shadow:0 20px 45px rgba(15,23,42,.22);display:none}
-.jlpt-section-menu.open{display:block}
-.jlpt-section-menu a{display:flex;align-items:center;gap:11px;padding:12px 13px;border-radius:12px;color:#1e293b!important;text-decoration:none!important;font-weight:800;font-size:14px}
-.jlpt-section-menu a:hover{background:#f0fdfa;color:#0f766e!important}
-.jlpt-section-menu a.current{background:#0f766e;color:#fff!important}
-.jlpt-section-menu .mi{width:28px;text-align:center;font-size:19px}
+.jlpt-section-menu.open{display:block}.jlpt-section-menu a{display:flex;align-items:center;gap:11px;padding:12px 13px;border-radius:12px;color:#1e293b!important;text-decoration:none!important;font-weight:800;font-size:14px}.jlpt-section-menu a:hover{background:#f0fdfa;color:#0f766e!important}.jlpt-section-menu a.current{background:#0f766e;color:#fff!important}.jlpt-section-menu .mi{width:28px;text-align:center;font-size:19px}
 @media(max-width:560px){.jlpt-section-menu{position:fixed;left:16px;right:16px;top:auto;bottom:18px;width:auto;max-height:70vh;overflow:auto}.jlpt-section-menu-btn{width:36px;height:36px}}
 </style>
 <script id="jlpt-n5-section-menu">
@@ -116,19 +165,17 @@ class RemoveVocabularyFlagMiddleware:
 '''
 
         additions = ''
+        if 'id="jlpt-vocab-capitalize-meaning"' not in html:
+            additions += capitalization_script
         if 'id="jlpt-vocab-direct-jump"' not in html:
             additions += lesson_jump_script
         if 'id="jlpt-n5-section-menu"' not in html:
             additions += section_menu_script
 
         if additions:
-            if '</body>' in html:
-                html = html.replace('</body>', additions + '</body>')
-            else:
-                html += additions
+            html = html.replace('</body>', additions + '</body>') if '</body>' in html else html + additions
 
         response.content = html.encode(response.charset or 'utf-8')
         if response.has_header('Content-Length'):
             response['Content-Length'] = str(len(response.content))
-
         return response
