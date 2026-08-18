@@ -10,7 +10,7 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         username = os.environ.get("ADMIN_USERNAME", "").strip()
         email = os.environ.get("ADMIN_EMAIL", "").strip()
-        password = os.environ.get("ADMIN_PASSWORD", "")
+        password = os.environ.get("ADMIN_PASSWORD", "").strip()
 
         if not username or not password:
             self.stdout.write("ADMIN_USERNAME/ADMIN_PASSWORD not set; skipping admin bootstrap.")
