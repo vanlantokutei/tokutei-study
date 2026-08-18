@@ -16,7 +16,7 @@ application = get_wsgi_application()
 def _ensure_admin_account():
     username = os.environ.get('ADMIN_USERNAME', '').strip()
     email = os.environ.get('ADMIN_EMAIL', '').strip()
-    password = os.environ.get('ADMIN_PASSWORD', '')
+    password = os.environ.get('ADMIN_PASSWORD', '').strip()
 
     print(f'[ADMIN-BOOTSTRAP] ADMIN_USERNAME present: {bool(username)}', flush=True)
     print(f'[ADMIN-BOOTSTRAP] ADMIN_EMAIL present: {bool(email)}', flush=True)
@@ -39,8 +39,10 @@ def _ensure_admin_account():
         user.set_password(password)
         user.save()
 
+        password_ok = user.check_password(password)
         action = 'created' if created else 'updated'
         print(f'[ADMIN-BOOTSTRAP] SUCCESS: admin account {action} for username={username!r}.', flush=True)
+        print(f'[ADMIN-BOOTSTRAP] PASSWORD_CHECK: {password_ok}', flush=True)
     except Exception as exc:
         print(f'[ADMIN-BOOTSTRAP] ERROR: {type(exc).__name__}: {exc}', flush=True)
 
