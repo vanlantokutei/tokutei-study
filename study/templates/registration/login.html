@@ -63,9 +63,30 @@
             stroke-linecap: round;
             stroke-linejoin: round;
         }
+        .remember-row {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            margin-top: 14px;
+            color: #475569;
+            font-size: 14px;
+        }
+        .remember-row input {
+            width: 18px;
+            height: 18px;
+            margin: 0;
+            padding: 0;
+            accent-color: #0f9488;
+        }
+        .remember-row label {
+            display: inline;
+            margin: 0;
+            font-weight: 500;
+            cursor: pointer;
+        }
         .submit-btn {
             width: 100%;
-            margin-top: 22px;
+            margin-top: 18px;
             padding: 13px;
             border: 0;
             border-radius: 10px;
@@ -120,6 +141,11 @@
                 </button>
             </div>
 
+            <div class="remember-row">
+                <input type="checkbox" id="remember" name="remember">
+                <label for="remember">Nhớ đăng nhập trên thiết bị này</label>
+            </div>
+
             <button class="submit-btn" type="submit">Đăng nhập</button>
         </form>
 
@@ -130,9 +156,13 @@
     <script>
         (function () {
             const passwordInput = document.getElementById('{{ form.password.id_for_label }}');
+            const usernameInput = document.getElementById('{{ form.username.id_for_label }}');
             const toggleButton = document.getElementById('togglePassword');
             const eyeOffIcon = document.getElementById('eyeOffIcon');
             const eyeIcon = document.getElementById('eyeIcon');
+
+            if (usernameInput) usernameInput.setAttribute('autocomplete', 'username');
+            if (passwordInput) passwordInput.setAttribute('autocomplete', 'current-password');
 
             if (!passwordInput || !toggleButton) return;
 
